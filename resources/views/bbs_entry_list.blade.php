@@ -15,8 +15,21 @@
 
 	@foreach ($item_list as $item)
 	<div class="entry">
-		<h5>{{ $item->title }}</h5>
-		<p>by{{ $item->author }}</p>
+		<h5>{{ $item->title }}</h5><p>by{{ $item->author }}</p>
+		
+		<p>
+		ハンド：{{ $item->hand }} <br>
+		ポジション：{{ $item->position }} <br>
+		スタック：{{ $item->stack }} <br>
+		フロップ：{{ $item->flop }} <br>
+		フロップのアクション：{{ $item->action_at_flop }} <br>
+		ターン：{{ $item->turn }} <br>
+		ターンのアクション：{{ $item->action_at_turn }} <br>
+		リバー：{{ $item->river }} <br>
+		リバーのアクション：{{ $item->action_at_river }} <br>
+		相手のショーダウンハンド：{{ $item->hand_of_opponent }} <br>
+		収支：{{ $item->result }} <br>
+		</p>
 		<div>
 			{!! nl2br($item->body) !!}
 		</div>
