@@ -8,6 +8,9 @@
 </head>
 <body>
 	<h2>新規投稿</h2>
+
+	<button onclick="location.href='/main'">メインページに戻る</button>
+
 	<!-- 投稿フォーム -->
 	@include("part.bbs_entry_form")
 
