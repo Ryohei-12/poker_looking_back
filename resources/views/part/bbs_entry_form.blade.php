@@ -22,11 +22,6 @@
 		</div>
 
 		<div>
-			<label>投稿文</label><br />
-			<textarea name="body"></textarea>
-		</div>
-
-		<div>
 			<label>ハンド</label><br />
 			<textarea name="hand"></textarea>
 		</div>
@@ -79,6 +74,11 @@
 		<div>
 			<label>収支</label><br />
 			<textarea name="result"></textarea>
+		</div>
+
+		<div>
+			<label>投稿文</label><br />
+			<textarea name="body"></textarea>
 		</div>
 
 		<input type="submit" value="投稿" /> 

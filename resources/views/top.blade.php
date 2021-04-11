@@ -11,7 +11,8 @@
 	
 		<!-- 投稿ページへ遷移 -->
 		<button onclick="location.href='/bbs'">投稿ページ</button>
-
+		<button onclick="location.href='/login'">ログイン</button>
+		<button onclick="location.href='/register'">新規登録</button>
 	<!-- トップコメント -->
 	<p>
 	ポーカーの上達に必須のハンドレビュー。<br>
