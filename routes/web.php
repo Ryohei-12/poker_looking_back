@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/main', function () {
     return view('main');
 });
+Route::get('/handrange', function () {
+    return view('handrange');
+});
 Route::get('/bbs', "BbsEntryController@index");
 Route::post('/create', "BbsEntryController@create");
 
