@@ -16,15 +16,18 @@ class BbsEntryController extends Controller
 	}
 	function create(Request $request){
 		//@TODO 投稿処理を行う
-        $input = $request->only('author', 'title', 'hand', 'position', 'stack', 'flop', 'action_at_flop', 'turn', 'action_at_turn', 'river', 'action_at_river', 'hand_of_opponent', 'result', 'body');
+        $input = $request->only('author', 'title', 'first_rank', 'first_suit', 'second_rank', 'second_suit', 'position', 'stack', 'action_at_preflop', 'flop', 'action_at_flop', 'turn', 'action_at_turn', 'river', 'action_at_river', 'hand_of_opponent', 'result', 'body');
 		
         $entry = new BbsEntry();
 	    $entry->author = $input["author"];
 	    $entry->title = $input["title"];
-        $entry->hand = $input["hand"];
+        $entry->first_rank = $input["first_rank"];
+        $entry->first_suit = $input["first_suit"];
+        $entry->second_rank = $input["second_rank"];
+        $entry->second_suit = $input["second_suit"];
         $entry->position = $input["position"];
         $entry->stack = $input["stack"];
-        $entry->preflop = $input["preflop"];
+        $entry->action_at_preflop = $input["action_at_preflop"];
         $entry->flop = $input["flop"];
         $entry->action_at_flop = $input["action_at_flop"];
         $entry->turn = $input["turn"];

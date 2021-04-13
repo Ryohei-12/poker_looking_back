@@ -21,16 +21,16 @@
 		<h5>{{ $item->title }}</h5><p>by{{ $item->author }}</p>
 		
 		<p>
-		ハンド：{{ $item->hand }} <br>
+		ハンド：{{ $item->first_rank }}{{ $item->first_suit }}{{ $item->second_rank }}{{ $item->second_suit }} <br>
 		ポジション：{{ $item->position }} <br>
 		スタック：{{ $item->stack }} <br>
-		プリフロップ：{{ $item->preflop }} <br>
+		プリフロップのアクション：{!! nl2br($item->action_at_preflop) !!} <br>
 		フロップ：{{ $item->flop }} <br>
-		フロップのアクション：{{ $item->action_at_flop }} <br>
+		フロップのアクション：{!! nl2br($item->action_at_flop) !!} <br>
 		ターン：{{ $item->turn }} <br>
-		ターンのアクション：{{ $item->action_at_turn }} <br>
+		ターンのアクション：{!! nl2br($item->action_at_turn) !!} <br>
 		リバー：{{ $item->river }} <br>
-		リバーのアクション：{{ $item->action_at_river }} <br>
+		リバーのアクション：{!! nl2br($item->action_at_river) !!} <br>
 		相手のショーダウンハンド：{{ $item->hand_of_opponent }} <br>
 		収支：{{ $item->result }} <br>
 		</p>

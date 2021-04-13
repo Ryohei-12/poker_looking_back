@@ -23,17 +23,72 @@
 
 		<div>
 			<label>ハンド</label><br />
-			<textarea name="hand" placeholder="スターティングハンドを入力（例：AdAs）"></textarea>
+			<select name="first_rank">
+			<option value="A">A</option>
+    		<option value="K">K</option>
+    		<option value="Q">Q</option>
+			<option value="J">J</option>
+			<option value="T">T</option>
+			<option value="9">9</option>
+			<option value="8">8</option>
+			<option value="7">7</option>
+			<option value="6">6</option>
+			<option value="5">5</option>
+			<option value="4">4</option>
+			<option value="3">3</option>
+			<option value="2">2</option>
+			</select>
+
+			<select name="first_suit">
+			<option value="s">s</option>
+    		<option value="h">h</option>
+    		<option value="d">d</option>
+			<option value="c">c</option>
+			</select>
+
+			<select name="second_rank">
+			<option value="A">A</option>
+    		<option value="K">K</option>
+    		<option value="Q">Q</option>
+			<option value="J">J</option>
+			<option value="T">T</option>
+			<option value="9">9</option>
+			<option value="8">8</option>
+			<option value="7">7</option>
+			<option value="6">6</option>
+			<option value="5">5</option>
+			<option value="4">4</option>
+			<option value="3">3</option>
+			<option value="2">2</option>
+			</select>
+
+			<select name="second_suit">
+			<option value="s">s</option>
+    		<option value="h">h</option>
+    		<option value="d">d</option>
+			<option value="c">c</option>
+			</select>
 		</div>
 
 		<div>
 			<label>ポジション</label><br />
-			<textarea name="position" placeholder="例：BTN"></textarea>
+			<select name="position">
+			<option value="UTG">UTG</option>
+    		<option value="EP2">EP2</option>
+    		<option value="EP3">EP3</option>
+			<option value="MP1">MP1</option>
+			<option value="MP2">MP2</option>
+			<option value="MP3">MP3</option>
+			<option value="CO">CO</option>
+			<option value="BTN">BTN</option>
+			<option value="SB">SB</option>
+			<option value="BB">BB</option>
+			</select>
 		</div>
 
 		<div>
 			<label>スタック</label><br />
-			<textarea name="stack" placeholder="BB表記（例：100）"></textarea><p>BB</p>
+			<textarea name="stack" placeholder="BB表記（例：100.00）"></textarea>BB
 		</div>
 
 		<div>
@@ -78,7 +133,7 @@
 
 		<div>
 			<label>収支</label><br />
-			<textarea name="result" placeholder="そのハンドでの収支をBB表記で入力（例：+100）"></textarea>
+			<textarea name="result" placeholder="そのハンドでの収支をBB表記で入力（例：+100）"></textarea>BB
 		</div>
 
 		<div>
