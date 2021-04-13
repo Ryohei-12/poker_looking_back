@@ -24,6 +24,7 @@
 		ハンド：{{ $item->hand }} <br>
 		ポジション：{{ $item->position }} <br>
 		スタック：{{ $item->stack }} <br>
+		プリフロップ：{{ $item->preflop }} <br>
 		フロップ：{{ $item->flop }} <br>
 		フロップのアクション：{{ $item->action_at_flop }} <br>
 		ターン：{{ $item->turn }} <br>
@@ -34,6 +35,7 @@
 		収支：{{ $item->result }} <br>
 		</p>
 		<div>
+			コメント<br>
 			{!! nl2br($item->body) !!}
 		</div>
 	</div>

@@ -23,22 +23,27 @@
 
 		<div>
 			<label>ハンド</label><br />
-			<textarea name="hand"></textarea>
+			<textarea name="hand" placeholder="スターティングハンドを入力（例：AdAs）"></textarea>
 		</div>
 
 		<div>
 			<label>ポジション</label><br />
-			<textarea name="position"></textarea>
+			<textarea name="position" placeholder="例：BTN"></textarea>
 		</div>
 
 		<div>
 			<label>スタック</label><br />
-			<textarea name="stack"></textarea>
+			<textarea name="stack" placeholder="BB表記（例：100）"></textarea><p>BB</p>
+		</div>
+
+		<div>
+			<label>プリフロップのアクション</label><br />
+			<textarea name="action_at_preflop"></textarea>
 		</div>
 
 		<div>
 			<label>フロップ</label><br />
-			<textarea name="flop"></textarea>
+			<textarea name="flop" placeholder="フロップを入力（例：AcTd2d）"></textarea>
 		</div>
 
 		<div>
@@ -48,7 +53,7 @@
 
 		<div>
 			<label>ターン</label><br />
-			<textarea name="turn"></textarea>
+			<textarea name="turn" placeholder="ターンを入力（例：4d）"></textarea>
 		</div>
 
 		<div>
@@ -58,7 +63,7 @@
 
 		<div>
 			<label>リバー</label><br />
-			<textarea name="river"></textarea>
+			<textarea name="river" placeholder="リバーを入力（例：7d）"></textarea>
 		</div>
 
 		<div>
@@ -68,16 +73,16 @@
 
 		<div>
 			<label>相手のショーダウンハンド</label><br />
-			<textarea name="hand_of_opponent"></textarea>
+			<textarea name="hand_of_opponent" placeholder="ショーダウン時の相手のハンドを入力（例：KcKd）"></textarea>
 		</div>
 
 		<div>
 			<label>収支</label><br />
-			<textarea name="result"></textarea>
+			<textarea name="result" placeholder="そのハンドでの収支をBB表記で入力（例：+100）"></textarea>
 		</div>
 
 		<div>
-			<label>投稿文</label><br />
+			<label>コメント</label><br />
 			<textarea name="body"></textarea>
 		</div>
 

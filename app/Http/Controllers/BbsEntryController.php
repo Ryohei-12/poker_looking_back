@@ -24,6 +24,7 @@ class BbsEntryController extends Controller
         $entry->hand = $input["hand"];
         $entry->position = $input["position"];
         $entry->stack = $input["stack"];
+        $entry->preflop = $input["preflop"];
         $entry->flop = $input["flop"];
         $entry->action_at_flop = $input["action_at_flop"];
         $entry->turn = $input["turn"];
