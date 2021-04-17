@@ -7,7 +7,10 @@
 	<title>Document</title>
 </head>
 <body>
-	<h1>Poker looking back</h1>
+@extends('app')
+
+@section('title', 'メインメニュー')
+	@include('nav')
 	<h2>ハンドレンジ表</h2>
 	<button onclick="location.href='/main'">メインページに戻る</button>
 </body>

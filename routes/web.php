@@ -22,8 +22,9 @@ Route::get('/main', function () {
 Route::get('/handrange', function () {
     return view('handrange');
 });
-Route::get('/bbs', "BbsEntryController@index");
-Route::post('/create', "BbsEntryController@create");
+Route::get('/index', "ArticleController@index")->name('articles.index');
+Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
+Route::resource('/articles', 'ArticleController')->only(['show']);
 
 //Route::get('/', function () {
 //    return view('welcome');
