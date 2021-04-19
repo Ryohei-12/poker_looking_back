@@ -21,10 +21,9 @@ class ArticleController extends Controller
 		]);
 	}
     
-    //投稿画面の表示
+    //投稿処理を行う
 	function create(Request $request){
         return view('articles.create');
-		//@TODO 投稿処理を行う
     }
 
     //新規作成処理

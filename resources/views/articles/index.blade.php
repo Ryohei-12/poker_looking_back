@@ -2,14 +2,12 @@
 
 @section('title', '記事一覧')
 
-<body>
-
-	<button onclick="location.href='/main'">メインページに戻る</button>
+@section('content')
+	@include('nav')
 
 	<h2>記事一覧</h2>
+	<button onclick="location.href='/main'">メインページに戻る</button>
 
-	@section('content')
-		@include('nav')
   <div class="container">
 	@foreach ($articles as $article)
 	
@@ -21,5 +19,3 @@
 	@endif
   </div>
 @endsection
-</body>
-</html>

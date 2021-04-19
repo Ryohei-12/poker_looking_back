@@ -4,21 +4,16 @@
 		<input type="text" name="title" class="form-control" required value="{{ $article->title ?? old('title') }}">
 </div>
 <div class="form-group">
+
+
 	<label>ハンド</label><br />
 	<select name="first_rank">
-	<option value="A">A</option>
-	<option value="K">K</option>
-	<option value="Q">Q</option>
-	<option value="J">J</option>
-	<option value="T">T</option>
-	<option value="9">9</option>
-	<option value="8">8</option>
-	<option value="7">7</option>
-	<option value="6">6</option>
-	<option value="5">5</option>
-	<option value="4">4</option>
-	<option value="3">3</option>
-	<option value="2">2</option>
+	<?php
+	$rank = array('A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
+	foreach($rank as $rank){
+		print('<option value="' . $rank . '">' . $rank . '</option>');
+	}
+	?>
 	</select>
 
 	<select name="first_suit">
@@ -29,19 +24,12 @@
 	</select>
 
 	<select name="second_rank">
-	<option value="A">A</option>
-	<option value="K">K</option>
-	<option value="Q">Q</option>
-	<option value="J">J</option>
-	<option value="T">T</option>
-	<option value="9">9</option>
-	<option value="8">8</option>
-	<option value="7">7</option>
-	<option value="6">6</option>
-	<option value="5">5</option>
-	<option value="4">4</option>
-	<option value="3">3</option>
-	<option value="2">2</option>
+	<?php
+	$rank = array('A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
+	foreach($rank as $rank){
+		print('<option value="' . $rank . '">' . $rank . '</option>');
+	}
+	?>
 	</select>
 
 	<select name="second_suit">
@@ -50,11 +38,12 @@
 	<option value="d">d</option>
 	<option value="c">c</option>
 	</select>
-	</div>
+</div>
 
 <div class="form-group">
 	<label>ポジション</label><br />
 	<select name="position">
+	<option value='' disabled style='display:none;'<?php if(empty($_POST['first_rank'])) echo 'selected'; ?>>選択してください</option>
 	<option value="UTG">UTG</option>
 	<option value="EP2">EP2</option>
 	<option value="EP3">EP3</option>
@@ -81,20 +70,12 @@
 <div class="form-group">
 	<label>フロップ</label><br />
 	<select name="flop_1_rank">
-	<option value=""> </option>
-	<option value="A">A</option>
-	<option value="K">K</option>
-	<option value="Q">Q</option>
-	<option value="J">J</option>
-	<option value="T">T</option>
-	<option value="9">9</option>
-	<option value="8">8</option>
-	<option value="7">7</option>
-	<option value="6">6</option>
-	<option value="5">5</option>
-	<option value="4">4</option>
-	<option value="3">3</option>
-	<option value="2">2</option>
+	<?php
+	$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
+	foreach($rank as $rank){
+		print('<option value="' . $rank . '">' . $rank . '</option>');
+	}
+	?>
 	</select>
 
 	<select name="flop_1_suit">
@@ -106,20 +87,12 @@
 	</select>
 
 	<select name="flop_2_rank">
-	<option value=""> </option>
-	<option value="A">A</option>
-	<option value="K">K</option>
-	<option value="Q">Q</option>
-	<option value="J">J</option>
-	<option value="T">T</option>
-	<option value="9">9</option>
-	<option value="8">8</option>
-	<option value="7">7</option>
-	<option value="6">6</option>
-	<option value="5">5</option>
-	<option value="4">4</option>
-	<option value="3">3</option>
-	<option value="2">2</option>
+	<?php
+	$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
+	foreach($rank as $rank){
+		print('<option value="' . $rank . '">' . $rank . '</option>');
+	}
+	?>
 	</select>
 
 	<select name="flop_2_suit">
@@ -131,20 +104,12 @@
 	</select>
 
 	<select name="flop_3_rank">
-	<option value=""> </option>
-	<option value="A">A</option>
-	<option value="K">K</option>
-	<option value="Q">Q</option>
-	<option value="J">J</option>
-	<option value="T">T</option>
-	<option value="9">9</option>
-	<option value="8">8</option>
-	<option value="7">7</option>
-	<option value="6">6</option>
-	<option value="5">5</option>
-	<option value="4">4</option>
-	<option value="3">3</option>
-	<option value="2">2</option>
+	<?php
+	$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
+	foreach($rank as $rank){
+		print('<option value="' . $rank . '">' . $rank . '</option>');
+	}
+	?>
 	</select>
 
 	<select name="flop_3_suit">
@@ -164,20 +129,12 @@
 <div class="form-group">
 	<label>ターン</label><br />
 	<select name="turn_rank">
-	<option value=""> </option>
-	<option value="A">A</option>
-	<option value="K">K</option>
-	<option value="Q">Q</option>
-	<option value="J">J</option>
-	<option value="T">T</option>
-	<option value="9">9</option>
-	<option value="8">8</option>
-	<option value="7">7</option>
-	<option value="6">6</option>
-	<option value="5">5</option>
-	<option value="4">4</option>
-	<option value="3">3</option>
-	<option value="2">2</option>
+	<?php
+	$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
+	foreach($rank as $rank){
+		print('<option value="' . $rank . '">' . $rank . '</option>');
+	}
+	?>
 	</select>
 
 	<select name="turn_suit">
@@ -197,20 +154,12 @@
 <div class="form-group">
 	<label>リバー</label><br />
 	<select name="river_rank">
-	<option value=""> </option>
-	<option value="A">A</option>
-	<option value="K">K</option>
-	<option value="Q">Q</option>
-	<option value="J">J</option>
-	<option value="T">T</option>
-	<option value="9">9</option>
-	<option value="8">8</option>
-	<option value="7">7</option>
-	<option value="6">6</option>
-	<option value="5">5</option>
-	<option value="4">4</option>
-	<option value="3">3</option>
-	<option value="2">2</option>
+	<?php
+	$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
+	foreach($rank as $rank){
+		print('<option value="' . $rank . '">' . $rank . '</option>');
+	}
+	?>
 	</select>
 
 	<select name="river_suit">
@@ -230,20 +179,12 @@
 <div class="form-group">
 	<label>相手のショーダウンハンド</label><br />
 	<select name="opponent_first_rank">
-	<option value=""> </option>
-	<option value="A">A</option>
-	<option value="K">K</option>
-	<option value="Q">Q</option>
-	<option value="J">J</option>
-	<option value="T">T</option>
-	<option value="9">9</option>
-	<option value="8">8</option>
-	<option value="7">7</option>
-	<option value="6">6</option>
-	<option value="5">5</option>
-	<option value="4">4</option>
-	<option value="3">3</option>
-	<option value="2">2</option>
+	<?php
+	$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
+	foreach($rank as $rank){
+		print('<option value="' . $rank . '">' . $rank . '</option>');
+	}
+	?>
 	</select>
 
 	<select name="opponent_first_suit">
@@ -255,20 +196,12 @@
 	</select>
 
 	<select name="opponent_second_rank">
-	<option value=""> </option>
-	<option value="A">A</option>
-	<option value="K">K</option>
-	<option value="Q">Q</option>
-	<option value="J">J</option>
-	<option value="T">T</option>
-	<option value="9">9</option>
-	<option value="8">8</option>
-	<option value="7">7</option>
-	<option value="6">6</option>
-	<option value="5">5</option>
-	<option value="4">4</option>
-	<option value="3">3</option>
-	<option value="2">2</option>
+	<?php
+	$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
+	foreach($rank as $rank){
+		print('<option value="' . $rank . '">' . $rank . '</option>');
+	}
+	?>
 	</select>
 
 	<select name="opponent_second_suit">
