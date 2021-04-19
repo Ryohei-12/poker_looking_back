@@ -19,9 +19,7 @@ Route::get('/', function () {
 Route::get('/main', function () {
     return view('main');
 });
-Route::get('/handrange', function () {
-    return view('handrange');
-});
+
 Route::get('/index', "ArticleController@index")->name('articles.index');
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/articles', 'ArticleController')->only(['show']);
@@ -31,5 +29,14 @@ Route::resource('/articles', 'ArticleController')->only(['show']);
 //});
 
 Auth::routes();
+
+Route::get('/range', 'HandrangeController@situation');
+Route::get('/range/openrange', 'HandrangeController@openrange');
+Route::get('/range/openrange/utg', 'HandrangeController@openutg');
+Route::get('/range/openrange/hj', 'HandrangeController@openhj');
+Route::get('/range/openrange/co', 'HandrangeController@openco');
+Route::get('/range/openrange/btn', 'HandrangeController@openbtn');
+Route::get('/range/openrange/sb', 'HandrangeController@opensb');
+Route::get('/range/commingsoon', 'HandrangeController@commingsoon');
 
 Route::get('/home', 'HomeController@index')->name('home');
