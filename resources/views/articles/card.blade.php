@@ -24,9 +24,9 @@
           </div>
         </div>
       </div>
-      <!-- dropdown -->
+    <!-- dropdown -->
 
-      <!-- modal -->
+     <!-- modal -->
       <div id="modal-delete-{{ $article->id }}" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -49,8 +49,8 @@
           </div>
         </div>
       </div>
-      <!-- modal -->
-    @endif
+    <!-- modal -->
+  @endif
 
   </div>
   <div class="card-body pt-0">
@@ -77,5 +77,10 @@
 		コメント<br>
 		{!! nl2br($article->body) !!}
     </div>
+
+    <a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
+      コメントを見る
+    </a>
+
   </div>
 </div>

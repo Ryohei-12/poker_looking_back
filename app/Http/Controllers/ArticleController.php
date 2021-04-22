@@ -51,7 +51,7 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         $article->delete();
-        return redirect()->route('articles.index')->with('poststatus', '投稿を削除しました');;
+        return redirect()->route('articles.index')->with('poststatus', '投稿を削除しました');
     }
 
     //詳細表示処理

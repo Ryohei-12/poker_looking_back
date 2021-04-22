@@ -20,8 +20,9 @@ Route::get('/', function () {
 Route::get('/main', function () {
     return view('main');
 });
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
+//ユーザーページのコントローラー
 
 
 //記事投稿や編集等のコントローラー

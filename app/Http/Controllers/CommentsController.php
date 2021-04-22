@@ -18,4 +18,11 @@ class CommentsController extends Controller
         //$comment=Comment::getArticle($comment->id);
         return redirect()->route('articles.show', ['article' => $comment->article_id,])->with('commentstatus','コメントをしました');
     }
+
+    //コメント削除処理
+    public function destroy(Comment $comment)
+    {
+        $comment->delete();
+        return redirect()->route('articles.show', ['article' => $comment->article_id,])->with('commentstatus','コメントを削除しました');
+    }
 }
