@@ -23,9 +23,15 @@
           <h3 class="h5 mb-4">コメント</h3>
             @if($article->comment)
               @foreach($article->comment as $comment)
-              <i class="fab fa-bitcoin fa-2x mr-1"></i>
+                <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
+                  <i class="fab fa-bitcoin fa-2x mr-1"></i>
+                </a>
               <div>
-                <div class="font-weight-bold">{{ $comment->user->name }}</div>
+                <div class="font-weight-bold">
+                  <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
+                    {{ $comment->user->name }}
+                  </a>
+                </div>
                 <time class="text-secondary">
                   {{ $comment->created_at->format('Y.m.d H:i') }}
                 </time>
@@ -41,7 +47,7 @@
                         <div class="dropdown-menu dropdown-menu-right">
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $comment->id }}">
-                            <i class="fas fa-trash-alt mr-1"></i>記事を削除する
+                            <i class="fas fa-trash-alt mr-1"></i>コメントを削除する
                           </a>
                         </div>
                       </div>

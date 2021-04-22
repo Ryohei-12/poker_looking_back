@@ -23,7 +23,9 @@ Route::get('/main', function () {
 //Route::get('/home', 'HomeController@index')->name('home');
 
 //ユーザーページのコントローラー
-
+Route::prefix('users')->name('users.')->group(function () {
+    Route::get('/{name}', 'UserController@show')->name('show');
+});
 
 //記事投稿や編集等のコントローラー
 Route::get('/articles/index', "ArticleController@index")->name('articles.index');

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-dark blue-gradient">
 
-  <a class="navbar-brand" href="/home"><i class="far fa-sticky-note mr-1"></i>Poker looking back</a>
+  <a class="navbar-brand" href="/main"><i class="far fa-sticky-note mr-1"></i>Poker looking back</a>
 
   <ul class="navbar-nav ml-auto">
 
@@ -30,8 +30,7 @@
         <i class="fas fa-user-circle"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-        <button class="dropdown-item" type="button"
-                onclick="location.href=''">
+        <button class="dropdown-item" type="button" onclick="location.href='{{ route("users.show", ["name" => Auth::user()->name]) }}'">
           マイページ
         </button>
         <div class="dropdown-divider"></div>
