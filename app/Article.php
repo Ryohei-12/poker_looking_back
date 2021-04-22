@@ -37,8 +37,28 @@ class Article extends Model
         'body',
     ];
 
-    public function user(): BelongsTo
+    public static function getArticles()
+    {
+        return self::with(['user'])
+        ->orderBy('created_at','desc')
+        ->get();
+    }
+
+    public static function getArticle($id)
+    {
+        return self::with(['comment.user'])
+        ->where('id',$id)
+        ->first();
+    }
+
+    public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    //コメントを記事に所有させる
+    public function comment()
+    {
+        return $this->hasMany('App\Comment');
     }
 }

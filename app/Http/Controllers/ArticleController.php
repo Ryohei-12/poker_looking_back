@@ -14,11 +14,10 @@ class ArticleController extends Controller
     }
     
     function index(){
-		//@TODO 投稿一覧画面を表示
-        $articles = Article::all()->sortByDesc('created_at');
-		return view("articles.index", [
-			"articles" => $articles
-		]);
+		//投稿一覧画面を表示
+        $articles = Article::getArticles();
+
+		return view("articles.index", ["articles" => $articles]);
 	}
     
     //投稿処理を行う
@@ -32,7 +31,7 @@ class ArticleController extends Controller
         $article->fill($request->all());
         $article->user_id = $request->user()->id;
         $article->save();
-        return redirect('articles.index');
+        return redirect('articles/index')->with('poststatus', '新規投稿しました');
 	}
 
     //編集処理
@@ -45,19 +44,20 @@ class ArticleController extends Controller
     public function update(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all())->save();
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.index')->with('poststatus', '投稿を編集しました');
     }
 
     //記事削除処理
     public function destroy(Article $article)
     {
         $article->delete();
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.index')->with('poststatus', '投稿を削除しました');;
     }
 
     //詳細表示処理
     public function show(Article $article)
     {
+        $article=Article::getArticle($article->id);
         return view('articles.show', ['article' => $article]);
     } 
 }

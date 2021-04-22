@@ -17,10 +17,10 @@
 	</select>
 
 	<select name="first_suit">
-	<option value="s">s</option>
-	<option value="h">h</option>
-	<option value="d">d</option>
-	<option value="c">c</option>
+	<option value="s" <?php if('first_rank'==='s') echo 'selected'; ?>>s</option>
+	<option value="h" <?php if('first_rank'==='h') echo 'selected'; ?>>h</option>
+	<option value="d" <?php if('first_rank'==='d') echo 'selected'; ?>>d</option>
+	<option value="c" <?php if('first_rank'==='c') echo 'selected'; ?>>c</option>
 	</select>
 
 	<select name="second_rank">

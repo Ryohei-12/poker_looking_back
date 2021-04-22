@@ -1,23 +1,10 @@
-@extends('layouts.app')
+@extends('app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+@section('title', 'メインメニュー')
+	@include('nav')
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <button onclick="location.href='/articles/create'">ハンドレビュー投稿</button>
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+	<button onclick="location.href='/index'">ハンドレビュータイムライン</button>
+
+	<button onclick="location.href='/handrange'">プリフロップレンジ確認</button>
