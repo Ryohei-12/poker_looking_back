@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserRecordsTable extends Migration
+class AddUserIdToCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateUserRecordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_records', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+        Schema::table('comments', function (Blueprint $table) {
+            $table->bigInteger('user_id',20)->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -26,6 +26,8 @@ class CreateUserRecordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_records');
+        Schema::table('comments', function (Blueprint $table) {
+            $table->dropColumn('user_id');
+        });
     }
 }

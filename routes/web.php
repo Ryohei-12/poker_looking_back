@@ -13,11 +13,27 @@
 
 use Illuminate\Support\Facades\Route;
 
+//メインページ、トップページ表示のコントローラー
 Route::get('/', function () {
     return view('top');
 });
-Route::get('/bbs', "BbsEntryController@index");
-Route::post('/create', "BbsEntryController@create");
+Route::get('/main', function () {
+    return view('main');
+});
+//Route::get('/home', 'HomeController@index')->name('home');
+
+//ユーザーページのコントローラー
+Route::prefix('users')->name('users.')->group(function () {
+    Route::get('/{name}', 'UserController@show')->name('show');
+});
+
+//記事投稿や編集等のコントローラー
+Route::get('/articles/index', "ArticleController@index")->name('articles.index');
+Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
+Route::resource('/articles', 'ArticleController')->only(['show']);
+
+//コメント機能用のコントローラー
+Route::resource('comments', 'CommentsController')->middleware('auth');
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -25,4 +41,14 @@ Route::post('/create', "BbsEntryController@create");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//ハンドレンジ表表示のコントローラー
+Route::get('/range', 'HandrangeController@situation');
+Route::get('/range/openrange', 'HandrangeController@openrange');
+Route::get('/range/openrange/utg', 'HandrangeController@openutg');
+Route::get('/range/openrange/hj', 'HandrangeController@openhj');
+Route::get('/range/openrange/co', 'HandrangeController@openco');
+Route::get('/range/openrange/btn', 'HandrangeController@openbtn');
+Route::get('/range/openrange/sb', 'HandrangeController@opensb');
+Route::get('/range/commingsoon', 'HandrangeController@commingsoon');
+
+
