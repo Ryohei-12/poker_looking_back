@@ -13,8 +13,8 @@ class ArticleController extends Controller
         $this->authorizeResource(Article::class, 'article');
     }
     
+    //投稿一覧画面を表示
     function index(){
-		//投稿一覧画面を表示
         $articles = Article::getArticles();
 
 		return view("articles.index", ["articles" => $articles]);

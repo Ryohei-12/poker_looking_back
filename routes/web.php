@@ -20,7 +20,6 @@ Route::get('/', function () {
 Route::get('/main', function () {
     return view('main');
 });
-//Route::get('/home', 'HomeController@index')->name('home');
 
 //ユーザーページのコントローラー
 Route::prefix('users')->name('users.')->group(function () {
