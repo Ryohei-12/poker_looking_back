@@ -21,11 +21,22 @@ class CommentRequest extends FormRequest
      *
      * @return array
      */
+
+    //article_idカラムはarticleテーブルのidカラムを参照
+    //本文200文字以内
     public function rules()
     {
         return [
             'article_id' => 'required|exists:articles,id',
-            'body' => 'required|max:2000',
+            'body' => 'required|max:200',
+        ];
+    }
+
+    //エラーメッセージ翻訳
+    public function attributes()
+    {
+        return [
+            'body' => '本文',
         ];
     }
 }

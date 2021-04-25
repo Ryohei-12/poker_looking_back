@@ -37,6 +37,7 @@ class Article extends Model
         'body',
     ];
 
+    //ユーザーテーブルの情報を取得→オブジェクト化（作成時間降順）
     public static function getArticles()
     {
         return self::with(['user'])
@@ -44,6 +45,7 @@ class Article extends Model
         ->get();
     }
 
+    //コメント・ユーザーテーブルの情報を取得、オブジェクト化・該当のユーザーを絞り込む
     public static function getArticle($id)
     {
         return self::with(['comment.user'])
@@ -51,12 +53,13 @@ class Article extends Model
         ->first();
     }
 
+    //ユーザーテーブルとのリレーション
     public function user()
     {
         return $this->belongsTo('App\User');
     }
 
-    //コメントを記事に所有させる
+    //コメントを記事に所有させる（リレーション）
     public function comment()
     {
         return $this->hasMany('App\Comment');

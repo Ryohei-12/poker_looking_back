@@ -33,6 +33,8 @@ class LoginController extends Controller
      *
      * @return void
      */
+
+    //コンストラクタ・ログアウトしたユーザー以外ゲスト
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

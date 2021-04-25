@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class HandrangeController extends Controller
 {
+    //各種対応ページの表示
     public function situation(){
         return view('handranges.handrange');
     }

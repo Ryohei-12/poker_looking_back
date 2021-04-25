@@ -46,11 +46,13 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
+    //新規登録のバリデーション
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'alpha_num', 'min:3', 'max:16', 'unique:users'], //英数字3〜16文字のユニークユーザー
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'], //メールアドレスの形でユニーク
             'password' => ['required', 'string','alpha_num', 'min:8', 'confirmed'], //英数字8文字以上
         ]);
     }
@@ -61,6 +63,8 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+
+    //ユーザー新規登録の内容をUserテーブルに送る
     protected function create(array $data)
     {
         return User::create([

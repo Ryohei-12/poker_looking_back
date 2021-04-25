@@ -21,6 +21,9 @@ class ArticleRequest extends FormRequest
      *
      * @return array
      */
+
+    //タイトル50文字以下
+    //本文500文字以下
     public function rules()
     {
         return [
@@ -30,6 +33,7 @@ class ArticleRequest extends FormRequest
         ];
     }
 
+    //エラーメッセージ翻訳
     public function attributes()
     {
         return [

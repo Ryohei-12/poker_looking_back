@@ -44,6 +44,8 @@ class PasswordResetNotification extends Notification
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
+
+    //メールタイトル・テキスト内容ファイル・メール内URL等設定
     public function toMail($notifiable)
     {
         return $this->mail

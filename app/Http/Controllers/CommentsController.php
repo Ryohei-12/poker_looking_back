@@ -10,16 +10,16 @@ use App\Http\Requests\CommentRequest;
 
 class CommentsController extends Controller
 {
+    //コメント投稿・user_idはuserテーブルのidカラムを参照・リダイレクト先はコメントした投稿の詳細→メッセージ「コメントをしました」を表示
     public function store(CommentRequest $request,Comment $comment)
     {
         $comment->fill($request->all());
         $comment->user_id = $request->user()->id;
         $comment->save();
-        //$comment=Comment::getArticle($comment->id);
         return redirect()->route('articles.show', ['article' => $comment->article_id,])->with('commentstatus','コメントをしました');
     }
 
-    //コメント削除処理
+    //コメント削除→メッセージ「コメントを削除しました」を表示
     public function destroy(Comment $comment)
     {
         $comment->delete();

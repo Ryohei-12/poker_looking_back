@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    //対応するユーザーをuserテーブルからひとつ見つける・そのユーザーidと紐づく投稿のみ作成時間降順で表示
     public function show(string $name)
     {
         $user = User::where('name', $name)->first();
