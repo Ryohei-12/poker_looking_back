@@ -33,7 +33,7 @@
 	.jumbotron_all {
 		background-image:url(/img/background.PNG);
     background-position: center center; 
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-attachment: fixed;
 		background-size: cover;
 		height: auto;
