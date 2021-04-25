@@ -21,8 +21,12 @@ class ArticleRequest extends FormRequest
      *
      * @return array
      */
+<<<<<<< Updated upstream
 
     //タイトル50文字以下
+=======
+    //記事のタイトル50文字以下
+>>>>>>> Stashed changes
     //本文500文字以下
     public function rules()
     {
@@ -33,7 +37,11 @@ class ArticleRequest extends FormRequest
         ];
     }
 
+<<<<<<< Updated upstream
     //エラーメッセージ翻訳
+=======
+    //エラー内容の翻訳
+>>>>>>> Stashed changes
     public function attributes()
     {
         return [

@@ -28,6 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
+    //認証後メインページへ遷移
     protected $redirectTo = '/main';
 
     /**
@@ -35,6 +36,7 @@ class RegisterController extends Controller
      *
      * @return void
      */
+    //条件：ここで作成する配列を変数ゲストに代入する
     public function __construct()
     {
         $this->middleware('guest');
@@ -46,8 +48,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+<<<<<<< Updated upstream
 
     //新規登録のバリデーション
+=======
+    //ユーザー登録内容のバリデーション
+>>>>>>> Stashed changes
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -63,8 +69,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+<<<<<<< Updated upstream
 
     //ユーザー新規登録の内容をUserテーブルに送る
+=======
+    //新規ユーザー登録
+>>>>>>> Stashed changes
     protected function create(array $data)
     {
         return User::create([

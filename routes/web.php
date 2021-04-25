@@ -13,16 +13,19 @@
 
 use Illuminate\Support\Facades\Route;
 
-//メインページ、トップページ表示のコントローラー
+//トップページ表示
 Route::get('/', function () {
     return view('top');
 });
+
+//メインページ表示
 Route::get('/main', function () {
     return view('main');
 });
 
-//ユーザーページのコントローラー
+//ユーザーページ表示
 Route::prefix('users')->name('users.')->group(function () {
+<<<<<<< Updated upstream
     //ユーザーの詳細ページはユーザー名をURLに参照する
     Route::get('/{name}', 'UserController@show')->name('show');
 });
@@ -35,6 +38,22 @@ Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->mi
 Route::resource('/articles', 'ArticleController')->only(['show']);
 
 //コメント投稿・削除（コントローラーを作成すればCRAD可能）→ログインユーザーのみ
+=======
+    //ユーザーIDをURLに挿入
+    Route::get('/{name}', 'UserController@show')->name('show');
+});
+
+//記事一覧表示
+Route::get('/articles/index', "ArticleController@index")->name('articles.index');
+
+//記事新規投稿・編集・削除→ログインしたユーザーのみ
+Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
+
+//記事詳細表示
+Route::resource('/articles', 'ArticleController')->only(['show']);
+
+//コメント機能→ログインしたユーザーのみ
+>>>>>>> Stashed changes
 Route::resource('comments', 'CommentsController')->middleware('auth');
 
 //ユーザー認証
