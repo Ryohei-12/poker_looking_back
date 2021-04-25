@@ -1,6 +1,7 @@
+<!--未開発画面-->
 @extends('app')
 
-@section('title', 'ハンドレンジ表')
+@section('title', 'comming soon')
 	@include('nav')
 
 	<body>

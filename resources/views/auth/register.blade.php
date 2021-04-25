@@ -1,8 +1,10 @@
+<!--新規ユーザー登録画面-->
 @extends('app')
 
-@section('title', 'ユーザー登録')
+@section('title', 'sign up')
 
 @section('content')
+
 <div class="jumbotron_all jumbotron-extend" style="height: 100vh;">
   <div class="container text-light">
     <div class="container">
@@ -20,26 +22,27 @@
 
               @include('error_card_list')
 
+              <!--新規登録フォーム-->
               <div class="card-text text-light">
                 <form method="POST" action="{{ route('register') }}">
                   @csrf
                   <div class="md-form text-text-light">
                     <label for="name" class="text-light">ユーザー名</label>
-                    <input class="form-control" type="text" id="name" name="name" required value="{{ old('name') }}">
+                    <input class="form-control text-light" type="text" id="name" name="name" required value="{{ old('name') }}">
                     <small>英数字3〜16文字(登録後の変更はできません)</small>
                   </div>
                   <div class="md-form">
                     <label for="email" class="text-light">メールアドレス</label>
-                    <input class="form-control" type="text" id="email" name="email" required value="{{ old('email') }}" >
+                    <input class="form-control text-light" type="text" id="email" name="email" required value="{{ old('email') }}" >
                   </div>
                   <div class="md-form">
                     <label for="password" class="text-light">パスワード</label>
-                    <input class="form-control" type="password" id="password" name="password" required>
+                    <input class="form-control text-light" type="password" id="password" name="password" required>
                     <small>英数字8文字以上</small>
                   </div>
                   <div class="md-form">
                     <label for="password_confirmation" class="text-light">パスワード(確認)</label>
-                    <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" required>
+                    <input class="form-control text-light" type="password" id="password_confirmation" name="password_confirmation" required>
                   </div>
                   <button class="btn btn-block mt-2 mb-2 text-light" 
                   style="background: linear-gradient(135deg, #000000, #009966);"

@@ -1,6 +1,7 @@
+<!--ボタンからのオープンレンジ表-->
 @extends('app')
 
-@section('title', 'ハンドレンジ表')
+@section('title', 'btn open range')
 	@include('nav')
 
 	<body>

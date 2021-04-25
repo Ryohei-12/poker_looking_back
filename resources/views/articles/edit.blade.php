@@ -1,6 +1,7 @@
+<!--投稿編集ページ-->
 @extends('app')
 
-@section('title', '記事更新')
+@section('title', 'update hand review')
 
 @include('nav')
 
@@ -15,6 +16,7 @@
               <div class="card-body pt-0">
                 @include('error_card_list')
                 <div class="card-text">
+                  <!--articleコントローラーのupdate起動-->
                   <form method="POST" action="{{ route('articles.update', ['article' => $article]) }}">
                     @method('PATCH')
                     @include('articles.form')

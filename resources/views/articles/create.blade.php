@@ -1,6 +1,7 @@
+<!--投稿作成ページ-->
 @extends('app')
 
-@section('title', '記事投稿')
+@section('title', 'post new hand review')
 
 @section('content')
 	@include('nav')

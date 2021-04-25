@@ -1,6 +1,7 @@
+<!--メインメニュー-->
 @extends('app')
 
-@section('title', 'メインメニュー')
+@section('title', 'main')
 
 @include('nav')
 

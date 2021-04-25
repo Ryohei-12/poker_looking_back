@@ -1,3 +1,4 @@
+<!--ナビバー-->
 <nav class="navbar navbar-expand navbar-dark" style="background: linear-gradient(135deg, #000000, #009966)">
 
   <a class="navbar-brand" href="/main">
@@ -7,18 +8,21 @@
 
   <ul class="navbar-nav ml-auto">
 
+  <!--未ログインユーザーの来訪なら表示-->
 	@guest
     <li class="nav-item">
       <a class="nav-link" href="{{ route('register') }}">ユーザー登録</a>
     </li>
 	@endguest
 
+  <!--未ログインユーザーの来訪なら表示-->
 	@guest
     <li class="nav-item">
       <a class="nav-link" href="{{ route('login') }}">ログイン</a>
     </li>
 	@endguest
 
+  <!--ログイン済ユーザーの来訪なら表示-->
 	@auth
     <li class="nav-item">
       <a class="nav-link" href="{{ route('articles.create') }}">+
@@ -27,6 +31,7 @@
     </li>
 	@endauth
 
+  <!--ログイン済ユーザーの来訪なら表示-->
 	@auth
     <!-- Dropdown -->
     <li class="nav-item dropdown">
@@ -48,7 +53,7 @@
     <form id="logout-button" method="POST" action="{{ route('logout') }}">
 		@csrf
 	</form>
-    <!-- Dropdown -->
+    <!-- Dropdown終了 -->
 	@endauth
 
   </ul>

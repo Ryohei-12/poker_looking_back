@@ -1,6 +1,7 @@
+<!--オープンポジション選択画面-->
 @extends('app')
 
-@section('title', 'ハンドレンジ表')
+@section('title', 'choose open position')
 	@include('nav')
 
 	<body>

@@ -1,6 +1,7 @@
+<!--UTGからのオープンレンジ表-->
 @extends('app')
 
-@section('title', 'ハンドレンジ表')
+@section('title', 'utg open range')
 	@include('nav')
 
 	<body>

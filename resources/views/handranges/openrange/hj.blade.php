@@ -1,6 +1,7 @@
+<!--HJ空のオープンレンジ表-->
 @extends('app')
 
-@section('title', 'ハンドレンジ表')
+@section('title', 'hj open range')
 	@include('nav')
 
 	<body>
