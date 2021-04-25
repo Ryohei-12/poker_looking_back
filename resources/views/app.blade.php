@@ -13,11 +13,39 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+  <!-- jumbotron -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+  <style type="text/css">
+  html {
+  height: 100%;
+  margin: 0;
+  }
+
+  body {
+    background-color: #111111;
+    z-index: 0;
+    height: 100%;
+    margin: 0;
+    }
+
+	.jumbotron_all {
+		background-image:url(/img/background.PNG);
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+		background-size: cover;
+		height: auto;
+    z-index: 1;}
+  </style>
+
 </head>
 
 <body>
 
   @yield('content')
+
 
   <!-- JQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
