@@ -1,6 +1,9 @@
-<nav class="navbar navbar-expand navbar-dark blue-gradient">
+<nav class="navbar navbar-expand navbar-dark" style="background: linear-gradient(135deg, #000000, #009966)">
 
-  <a class="navbar-brand" href="/main"><i class="far fa-sticky-note mr-1"></i>Poker looking back</a>
+  <a class="navbar-brand" href="/main">
+    <img src="{{ asset('img/logo.png') }}" alt="">
+    Poker looking back
+  </a>
 
   <ul class="navbar-nav ml-auto">
 
@@ -18,7 +21,9 @@
 
 	@auth
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('articles.create') }}"><i class="fas fa-pen mr-1"></i>投稿する</a>
+      <a class="nav-link" href="{{ route('articles.create') }}">+
+        <i class="fas fa-pen"></i>
+      </a>
     </li>
 	@endauth
 
@@ -27,7 +32,8 @@
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
          aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-user-circle"></i>
+        <i class="fas fa-user-circle fa-1x"></i>
+        <?php $user = Auth::user(); ?>{{ $user->name }}
       </a>
       <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
         <button class="dropdown-item" type="button" onclick="location.href='{{ route("users.show", ["name" => Auth::user()->name]) }}'">

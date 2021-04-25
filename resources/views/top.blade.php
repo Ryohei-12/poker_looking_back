@@ -9,32 +9,55 @@
 	<title>Document</title>
 
 	<style type="text/css">
-	.jumbotron {url(img/background.PNG) z-index:1; center no-repeat; background-size: cover;}
-	</style>
-	
+	html {
+		height: 100%;
+		margin: 0;}
+
+	.jumbotron { 
+		background-image:url(../img/background.PNG);
+		background-position: center center; 
+    	background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		height: auto;
+		background-color:black;}
+    </style>
 </head>
+
 <body>
-<div class="jumbotron" style="background-color: black; z-index:3">
-	<h1 class="text-center text-light">Poker looking back</h1>
+<div class="jumbotron jumbotron-extend">
+<div class="container text-center text-light">
+	<h1>Poker looking back</h1>
 	
-	<h5 class="text-center text-light">~ by Poker player for Poker player ~</h5>
+	<h5 class="mt-3">~ by Poker player for Poker player ~</h5>
 
-	<h3 class="text-center text-light">スキルアップしたいか？</h3>
-	<p class="text-center text-light">ポーカーのスキルアップに必須の</br>
+	<h3 class="mt-5">スキルアップしたいか？</h3>
+	<p>ポーカーのスキルアップに必須の</br>
 	レビューに特化した唯一のコミュニティ。</p>
-
-	<div style="text-align: center;">
-		<button style="color:ivory; background-color:black; font-size:20px; width:160px; height: 60px; margin:10px" onclick="location.href='/login'">ログイン</button>
+	
+	<div>
+		<button class="btn btn-dark" 
+		style="background: linear-gradient(-135deg, #000000, #009966); font-size:20px; width:160px; height: 60px; margin:10px" 
+		onclick="location.href='/login'">
+			ログイン
+		</button>
 		</br>
-		<button style="color:ivory; background-color:black; font-size:20px; width:160px; height: 60px; margin:10px" onclick="location.href='/register'">新規登録</button>
+
+		<button class="btn btn-dark" 
+		style="background: linear-gradient(-135deg, #000000, #009966); font-size:20px; width:160px; height: 60px; margin:10px" 
+		onclick="location.href='/register'">
+			新規登録
+		</button>
 	</div>
 
-	<h3 class="text-center text-light">印象に残ったハンドを記録</h3>
-	<p class="text-center text-light">気になったスポットをその場で保存。</br>
+	<h3 class="mt-4">印象に残ったハンドを記録</h3>
+	<p>気になったスポットをその場で保存。</br>
 	後の座学の際にスムーズに見返すことが可能に。</p>
 
-	<h3 class="text-center text-light">他者からのハンドレビュー</h3>
-	<p class="text-center text-light">他のプレイヤーからのハンドレビューも受けられることでさらなるスキルアップを。</p>
+	<h3 class="mt-4">他者からのハンドレビュー</h3>
+	<p>他のプレイヤーからのハンドレビューでさらなるスキルアップを。</p>
+</div>
+</div>
 
 </body>
 </html>
