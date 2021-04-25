@@ -1,9 +1,12 @@
+<!--ユーザー詳細画面-->
 @extends('app')
 
+<!--タイトルにはユーザー名を表示-->
 @section('title', $user->name)
 
 @section('content')
   @include('nav')
+  
 <div class="jumbotron_all jumbotron-extend" style="height: 100vh;">
 	<div class="container text-light">
 		<div class="container">

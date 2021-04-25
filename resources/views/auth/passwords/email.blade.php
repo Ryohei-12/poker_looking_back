@@ -1,8 +1,10 @@
+<!--パスワード再設定画面-->
 @extends('app')
 
-@section('title', 'パスワード再設定')
+@section('title', 'reset pass')
 
 @section('content')
+
 <div class="jumbotron_all jumbotron-extend" style="height: 100vh;">
   <div class="container text-light">
     <div class="container">
@@ -19,16 +21,17 @@
 
               @include('error_card_list')
 
+              <!--パスワード変更用メール送信のメッセージ-->
               @if (session('status'))
                 <div class="card-text alert alert-success">
                   {{ session('status') }}
                 </div>
               @endif
 
+              <!--メール送信先アドレス入力-->
               <div class="card-text">
                 <form method="POST" action="{{ route('password.email') }}">
                   @csrf
-
                   <div class="md-form">
                     <label for="email" class="text-light">メールアドレス</label>
                     <input class="form-control" type="text" id="email" name="email" required>

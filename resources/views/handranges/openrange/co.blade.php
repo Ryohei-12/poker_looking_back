@@ -1,6 +1,7 @@
+<!--カットオフからのオープンレンジ表-->
 @extends('app')
 
-@section('title', 'ハンドレンジ表')
+@section('title', 'co open range')
 	@include('nav')
 
 	<body>

@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    
+    //ログイン後メインページへ遷移
     protected $redirectTo = '/main';
 
     /**
@@ -33,6 +33,12 @@ class LoginController extends Controller
      *
      * @return void
      */
+<<<<<<< Updated upstream
+
+    //コンストラクタ・ログアウトしたユーザー以外ゲスト
+=======
+    //条件：ログアウトはログイン中のゲストから除く
+>>>>>>> Stashed changes
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

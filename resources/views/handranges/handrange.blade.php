@@ -1,6 +1,7 @@
+<!--ハンドレンジ表、シチュエーション選択画面-->
 @extends('app')
 
-@section('title', 'ハンドレンジ表')
+@section('title', 'choose situation')
 	@include('nav')
 
 	<body>

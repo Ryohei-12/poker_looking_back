@@ -1,11 +1,14 @@
+<!--記事の内容-->
 <div class="card mt-3 mx-auto" style="width: 100%; background: linear-gradient(135deg, #000000, #009966)">
   <div class="card-body d-flex flex-row">
+      <!--ユーザー詳細画面に遷移-->
       <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-light">
         <i class="fas fa-user-circle fa-3x mr-1"></i>
       </a>
     
     <div>
       <div class="font-weight-bold text-light">
+        <!--ユーザー詳細画面に遷移-->
         <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-light">
         {{ $article->user->name }}
         </a>
@@ -13,6 +16,7 @@
       <div class="font-weight-lighter">{{ $article->created_at->format('Y/m/d H:i') }}</div>
     </div>
 
+  <!--ログインしているユーザーと投稿者が一致した際に表示-->
   @if( Auth::id() === $article->user_id )
     <!-- dropdown -->
       <div class="ml-auto card-text">
@@ -20,10 +24,12 @@
           <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-ellipsis-v text-light"></i>
           </a>
+          <!--投稿更新ページに接続-->
           <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item" href="{{ route("articles.edit", ['article' => $article]) }}">
               <i class="fas fa-pen mr-1"></i>投稿を編集する
             </a>
+            <!--投稿削除機能に接続-->
             <div class="dropdown-divider"></div>
             <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $article->id }}">
               <i class="fas fa-trash-alt mr-1"></i>投稿を削除する
@@ -31,9 +37,9 @@
           </div>
         </div>
       </div>
-    <!-- dropdown -->
+    <!-- dropdown終了 -->
 
-     <!-- modal -->
+     <!-- 削除modal -->
       <div id="modal-delete-{{ $article->id }}" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content" style="background: linear-gradient(45deg, #000000, #009966)">
@@ -59,10 +65,11 @@
           </div>
         </div>
       </div>
-    <!-- modal -->
+    <!-- 削除modal終了 -->
   @endif
-
   </div>
+
+  <!--投稿内容-->
   <div class="card-body pt-0">
     <h3 class="h4 card-title">
       <a class="text-light" href="{{ route('articles.show', ['article' => $article]) }}">
@@ -84,10 +91,12 @@
 		相手のショーダウンハンド：{{ $article->opponent_first_rank }}{{ $article->opponent_first_suit }},{{ $article->opponent_second_rank }}{{ $article->opponent_second_suit }} <br>
 		収支：{{ $article->result }} <br>
 		</p>
+    <!--コメント/改行を反映-->
 		コメント<br>
 		{!! nl2br($article->body) !!}
     </div>
 
+    <!--投稿詳細ページに遷移-->
     <div class="mt-4">
       <a style="color:#AAAAAA;" href="{{ route('articles.show', ['article' => $article]) }}">
         コメントを見る

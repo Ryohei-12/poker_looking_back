@@ -44,6 +44,7 @@ class User extends Authenticatable
         $this->notify(new PasswordResetNotification($token, new BareMail()));
     }
 
+    //記事とのリレーション
     public function articles()
     {
         return $this->hasMany('App\Article');

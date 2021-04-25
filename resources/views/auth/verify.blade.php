@@ -1,3 +1,4 @@
+<!--パスワード再設定画面（メールから飛ぶ-->
 @extends('layouts.app')
 
 @section('content')

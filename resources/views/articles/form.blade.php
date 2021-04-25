@@ -1,3 +1,4 @@
+<!--投稿フォーム画面-->
 @csrf
 <div class="md-form">
 	<label>タイトル</label>
@@ -5,7 +6,7 @@
 </div>
 <div class="form-group">
 
-
+	<!--選択肢表示・編集時は以前の入力内容を保持-->
 	<label>ハンド</label><br />
 	<select name="first_rank">
 		@php

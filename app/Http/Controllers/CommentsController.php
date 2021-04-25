@@ -10,16 +10,26 @@ use App\Http\Requests\CommentRequest;
 
 class CommentsController extends Controller
 {
+<<<<<<< Updated upstream
+    //コメント投稿・user_idはuserテーブルのidカラムを参照・リダイレクト先はコメントした投稿の詳細→メッセージ「コメントをしました」を表示
+=======
+    //コメント新規作成
+    //ユーザー情報はuserテーブルとリレーション
+    //コメントをした投稿にリダイレクトする→「コメントをしました」とポップアップ出す
+>>>>>>> Stashed changes
     public function store(CommentRequest $request,Comment $comment)
     {
         $comment->fill($request->all());
         $comment->user_id = $request->user()->id;
         $comment->save();
-        //$comment=Comment::getArticle($comment->id);
         return redirect()->route('articles.show', ['article' => $comment->article_id,])->with('commentstatus','コメントをしました');
     }
 
-    //コメント削除処理
+<<<<<<< Updated upstream
+    //コメント削除→メッセージ「コメントを削除しました」を表示
+=======
+    //コメント削除処理→「コメントを削除しました」とポップアップ出す
+>>>>>>> Stashed changes
     public function destroy(Comment $comment)
     {
         $comment->delete();

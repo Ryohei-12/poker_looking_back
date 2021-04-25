@@ -12,20 +12,15 @@ class Comment extends Model
         'body','article_id'
     ];
 
+    //記事とのリレーション
     public function Article()
     {
         return $this->belongsTo('App\Article');
     }
 
+    //ユーザーとのリレーション
     public function user()
     {
         return $this->belongsTo('App\User');
     }
-
-    //public static function getArticle($id)
-    //{
-    //    return self::with(['article'])
-    //    ->where('id',$id)
-    //    ->first();
-    //}
 }

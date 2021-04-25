@@ -1,8 +1,10 @@
+<!--ログインページ-->
 @extends('app')
 
-@section('title', 'ログイン')
+@section('title', 'login')
 
 @section('content')
+
 <div class="jumbotron_all jumbotron-extend" style="height: 100vh;">
   <div class="container text-light">
     <div class="container">
@@ -15,24 +17,26 @@
 
               @include('error_card_list')
               
-              <div class="card-text">
+              <div class="card-text text-light">
+                <!--ログインフォーム-->
                 <form method="POST" action="{{ route('login') }}">
                   @csrf
-
-                  <div class="md-form">
+                  <div class="md-form text-light">
                     <label for="email">メールアドレス</label>
-                    <input class="form-control" type="text" id="email" name="email" required value="{{ old('email') }}">
+                    <input class="form-control text-light" type="text" id="email" name="email" required value="{{ old('email') }}">
                   </div>
 
                   <div class="md-form">
                     <label for="password">パスワード</label>
-                    <input class="form-control" type="password" id="password" name="password" required>
+                    <input class="form-control text-light" type="password" id="password" name="password" required>
                   </div>
   
                   <input type="hidden" name="remember" id="remember" value="on">
                   
-                  <div class="text-left">
-                    <a href="{{ route('password.request') }}" class="card-text text-light">パスワードを忘れた方</a>
+                  <div class="text-right mr-3">
+                    <a href="{{ route('password.request') }}" class="card-text text-light">
+                      パスワードを忘れた方
+                    </a>
                   </div>
 
                   <button class="btn btn-block mt-2 mb-2 text-light"

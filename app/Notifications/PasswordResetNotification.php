@@ -44,6 +44,13 @@ class PasswordResetNotification extends Notification
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
+
+<<<<<<< Updated upstream
+    //メールタイトル・テキスト内容ファイル・メール内URL等設定
+=======
+    //メールタイトル＝【Poker lookin back】
+    //
+>>>>>>> Stashed changes
     public function toMail($notifiable)
     {
         return $this->mail

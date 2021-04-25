@@ -21,11 +21,31 @@ class CommentRequest extends FormRequest
      *
      * @return array
      */
+<<<<<<< Updated upstream
+
+    //article_idカラムはarticleテーブルのidカラムを参照
+    //本文200文字以内
+=======
+    //記事のIDはarticlesテーブルのidカラムから持ってくる
+    //本文200文字以下
+>>>>>>> Stashed changes
     public function rules()
     {
         return [
             'article_id' => 'required|exists:articles,id',
-            'body' => 'required|max:2000',
+            'body' => 'required|max:200',
+        ];
+    }
+
+<<<<<<< Updated upstream
+    //エラーメッセージ翻訳
+=======
+    //エラー内容の翻訳
+>>>>>>> Stashed changes
+    public function attributes()
+    {
+        return [
+            'body' => '本文',
         ];
     }
 }

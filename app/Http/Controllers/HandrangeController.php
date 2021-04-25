@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class HandrangeController extends Controller
 {
+<<<<<<< Updated upstream
+    //各種対応ページの表示
+=======
+    //それぞれのレンジ表を表示
+>>>>>>> Stashed changes
     public function situation(){
         return view('handranges.handrange');
     }

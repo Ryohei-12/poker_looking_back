@@ -25,6 +25,12 @@ class ForgotPasswordController extends Controller
      *
      * @return void
      */
+<<<<<<< Updated upstream
+
+    //コンストラクタ
+=======
+    //
+>>>>>>> Stashed changes
     public function __construct()
     {
         $this->middleware('guest');
