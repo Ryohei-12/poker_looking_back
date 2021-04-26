@@ -33,12 +33,8 @@ class LoginController extends Controller
      *
      * @return void
      */
-<<<<<<< Updated upstream
 
     //コンストラクタ・ログアウトしたユーザー以外ゲスト
-=======
-    //条件：ログアウトはログイン中のゲストから除く
->>>>>>> Stashed changes
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

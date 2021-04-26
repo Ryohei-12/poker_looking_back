@@ -48,12 +48,8 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-<<<<<<< Updated upstream
 
     //新規登録のバリデーション
-=======
-    //ユーザー登録内容のバリデーション
->>>>>>> Stashed changes
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -69,12 +65,8 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-<<<<<<< Updated upstream
-
+    
     //ユーザー新規登録の内容をUserテーブルに送る
-=======
-    //新規ユーザー登録
->>>>>>> Stashed changes
     protected function create(array $data)
     {
         return User::create([

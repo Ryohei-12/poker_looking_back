@@ -10,12 +10,8 @@ use Illuminate\Queue\SerializesModels;
 class BareMail extends Mailable
 {
     use Queueable, SerializesModels;
-<<<<<<< Updated upstream
 //mailhog設定
-=======
-//malehog用
 
->>>>>>> Stashed changes
     /**
      * Create a new message instance.
      *
