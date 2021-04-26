@@ -21,14 +21,9 @@ class CommentRequest extends FormRequest
      *
      * @return array
      */
-<<<<<<< Updated upstream
 
     //article_idカラムはarticleテーブルのidカラムを参照
     //本文200文字以内
-=======
-    //記事のIDはarticlesテーブルのidカラムから持ってくる
-    //本文200文字以下
->>>>>>> Stashed changes
     public function rules()
     {
         return [
@@ -37,11 +32,7 @@ class CommentRequest extends FormRequest
         ];
     }
 
-<<<<<<< Updated upstream
     //エラーメッセージ翻訳
-=======
-    //エラー内容の翻訳
->>>>>>> Stashed changes
     public function attributes()
     {
         return [
@@ -49,5 +40,3 @@ class CommentRequest extends FormRequest
         ];
     }
 }
-
-//ここでarticle_idを取得する設定してみる？
