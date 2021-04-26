@@ -1,13 +1,13 @@
 <!--投稿フォーム画面-->
 @csrf
 <div class="md-form">
-	<label>タイトル</label>
-		<input type="text" name="title" class="form-control" required value="{{ $article->title ?? old('title') }}">
+	<label class="text-light">タイトル</label>
+		<input type="text" name="title" class="form-control text-light" required value="{{ $article->title ?? old('title') }}" placeholder="例:big pot!!!">
 </div>
 <div class="form-group">
 
 	<!--選択肢表示・編集時は以前の入力内容を保持-->
-	<label>ハンド</label><br />
+	<label class="text-light">ハンド</label><br />
 	<select name="first_rank">
 		@php
 		$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
@@ -78,7 +78,7 @@
 </div>
 
 <div class="form-group">
-	<label>ポジション</label><br />
+	<label class="text-light">ポジション</label><br />
 	<select name="position">
 	@php
 	$position = array('', 'UTG', 'EP2', 'EP3', 'MP1', 'MP2', 'MP3', 'CO', 'BTN', 'SB', 'BB');
@@ -97,18 +97,18 @@
 	</select>
 </div>
 
-<div class="form-group">
-	<label>スタック</label><br />
-	<textarea name="stack" placeholder="BB表記（例：100.00）">{{ $article->stack ?? old('stack') }}</textarea>BB
+<div class="md-form form-inline">
+	<label class="text-light">スタック</label>
+	<input type="text" name="stack" placeholder="例:100.00" class="form-control col-3 text-light" value="{{ $article->stack ?? old('stack') }}">BB
 </div>
 
 <div class="form-group">
-	<label>プリフロップのアクション</label><br />
+	<label class="text-light">プリフロップのアクション</label><br />
 	<textarea name="action_at_preflop">{{ $article->action_at_preflop ?? old('action_at_preflop') }}</textarea>
 </div>
 
 <div class="form-group">
-	<label>フロップ</label><br />
+	<label class="text-light">フロップ</label><br />
 	<select name="flop_1_rank">
 		@php
 		$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
@@ -213,12 +213,12 @@
 </div>
 
 <div class="form-group">
-	<label>フロップのアクション</label><br />
+	<label class="text-light">フロップのアクション</label><br />
 	<textarea name="action_at_flop">{{ $article->action_at_flop ?? old('action_at_flop') }}</textarea>
 </div>
 
 <div class="form-group">
-	<label>ターン</label><br />
+	<label class="text-light">ターン</label><br />
 	<select name="turn_rank">
 		@php
 		$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
@@ -255,12 +255,12 @@
 </div>
 
 <div class="form-group">
-	<label>ターンのアクション</label><br />
+	<label class="text-light">ターンのアクション</label><br />
 	<textarea name="action_at_turn">{{ $article->action_at_turn ?? old('action_at_turn') }}</textarea>
 </div>
 
 <div class="form-group">
-	<label>リバー</label><br />
+	<label class="text-light">リバー</label><br />
 	<select name="river_rank">
 		@php
 		$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
@@ -297,12 +297,12 @@
 </div>
 
 <div class="form-group">
-	<label>リバーのアクション</label><br />
+	<label class="text-light">リバーのアクション</label><br />
 	<textarea name="action_at_river">{{ $article->action_at_river ?? old('action_at_river') }}</textarea>
 </div>
 
 <div class="form-group">
-	<label>相手のショーダウンハンド</label><br />
+	<label class="text-light">相手のショーダウンハンド</label><br />
 	<select name="opponent_first_rank">
 		@php
 		$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
@@ -372,12 +372,12 @@
 	</select>
 </div>
 
-<div class="form-group">
-	<label>収支</label><br />
-	<textarea name="result" placeholder="そのハンドでの収支をBB表記で入力（例：+100）">{{ $article->result ?? old('result') }}</textarea>BB
+<div class="md-form form-inline">
+	<label class="text-light">収支</label><br />
+	<input type="text" name="stack" placeholder="例:100.00" class="form-control col-3 text-light" value="{{ $article->result ?? old('result') }}">BB
 </div>
 
 <div class="form-group">
-	<label>コメント</label><br />
-	<textarea name="body" required class="form-control" rows="16" placeholder="本文">{{ $article->body ?? old('body') }}</textarea>
+	<label class="text-light">コメント</label><br />
+	<textarea name="body" required class="form-control" rows="5">{{ $article->body ?? old('body') }}</textarea>
 </div>

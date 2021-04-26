@@ -51,7 +51,7 @@
                         <div class="ml-auto card-text">
                           <div class="dropdown" style="float: right;">
                             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fas fa-ellipsis-v"></i>
+                              <i class="fas fa-ellipsis-v text-light"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                               <div class="dropdown-divider"></div>
@@ -66,7 +66,7 @@
                         <!-- 削除modal -->
                         <div id="modal-delete-{{ $comment->id }}" class="modal fade" tabindex="-1" role="dialog">
                           <div class="modal-dialog" role="document">
-                            <div class="modal-content">
+                            <div class="modal-content" style="background: linear-gradient(-135deg, #000000, #009966);">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
                                   <span aria-hidden="true">&times;</span>
@@ -79,7 +79,7 @@
                                   コメントを削除します。よろしいですか？
                                 </div>
                                 <div class="modal-footer justify-content-between">
-                                  <a class="btn btn-outline-grey" data-dismiss="modal">キャンセル</a>
+                                  <a class="btn btn-outline-light text-light" data-dismiss="modal">キャンセル</a>
                                   <button type="submit" class="btn btn-danger">削除する</button>
                                 </div>
                               </form>
@@ -114,7 +114,7 @@
           <!--CommentControllerにarticle_idを送る-->
           <input name="article_id" type="hidden" value="{{ $article->id }}">
             <label class="text-light" for="body">新規コメント</label>
-              <textarea name="body" class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" rows="4" style="margin: 0 auto;">
+              <textarea name="body" class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" style="margin: 0 auto;">
                 {{ old('body') }}
               </textarea>
               @if ($errors->has('body'))

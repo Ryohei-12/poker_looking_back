@@ -13,7 +13,11 @@
 				<br/>
 
 				※orange = Raise<br />
-				<button onclick="location.href='/range/openrange'">ポジション選択画面に戻る</button><br />
+				<button class="btn btn-dark"
+				style="background: linear-gradient(-135deg, #000000, #009966); font-size:14px; width:210px; height: 40px; margin:15px; padding-bottom: 32px;"
+				onclick="location.href='/range/openrange'">
+					ポジション選択画面に戻る
+				</button>
 			</div>
 		</div>
 	</body>

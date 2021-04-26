@@ -20,7 +20,7 @@
                   <div class="text-center">
                     <button type="submit"
                     class="btn btn-dark"
-                    style="padding-bottom: 31px; font-size:15px; width:210px; height: 40px; margin:10px;">
+                    style="background: linear-gradient(135deg, #000000, #009966); padding-bottom: 31px; font-size:15px; width:210px; height: 40px; margin:10px;">
                       投稿する
                     </button>
                   </div>
