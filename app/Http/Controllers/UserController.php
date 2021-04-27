@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //DBからログイン中のユーザー情報を取り出す→記事一覧表示
-    //ユーザーページに表示（作成時期降順）
+    //ユーザー情報を取り出し、作成時期降順に並び替え
     public function show(string $name)
     {
         $user = User::where('name', $name)->first();

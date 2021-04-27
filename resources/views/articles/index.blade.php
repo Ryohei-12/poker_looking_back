@@ -31,7 +31,6 @@
 
 					@endforeach
 
-					<!--投稿がなければ「投稿がありません」と表示-->
 					@if(count($articles) < 1)
 					<p>投稿がありません</p>
 					@endif

@@ -13,6 +13,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+//ユーザー認証
+Auth::routes();
+
 //トップページ表示
 Route::get('/', function () {
     return view('top');
@@ -29,27 +32,24 @@ Route::prefix('users')->name('users.')->group(function () {
     Route::get('/{name}', 'UserController@show')->name('show');
 });
 
-//記事一覧
+//投稿一覧
 Route::get('/articles/index', "ArticleController@index")->name('articles.index');
-//記事作成・投稿・編集・更新・削除→ログインユーザーのみ
+//投稿作成・投稿・編集・更新・削除→ログインユーザーのみ
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
-//記事詳細画面
+//投稿詳細画面
 Route::resource('/articles', 'ArticleController')->only(['show']);
 
-//コメント投稿・削除（コントローラーを作成すればCRAD可能）→ログインユーザーのみ
+//コメント投稿・削除（コントローラーを作成すればCRUD可能）→ログインユーザーのみ    
 Route::resource('comments', 'CommentsController')->middleware('auth');
 
-//ユーザー認証
-Auth::routes();
-
 //各種ハンドレンジ表表示
-Route::get('/range', 'HandrangeController@situation');
-Route::get('/range/openrange', 'HandrangeController@openrange');
-Route::get('/range/openrange/utg', 'HandrangeController@openutg');
-Route::get('/range/openrange/hj', 'HandrangeController@openhj');
-Route::get('/range/openrange/co', 'HandrangeController@openco');
-Route::get('/range/openrange/btn', 'HandrangeController@openbtn');
-Route::get('/range/openrange/sb', 'HandrangeController@opensb');
-Route::get('/range/commingsoon', 'HandrangeController@commingsoon');
-
-
+Route::group(['prefix'=>'range' , 'as'=>'range.'], function(){
+    Route::get('/', 'HandrangeController@situation');
+    Route::get('/openrange', 'HandrangeController@openrange');
+    Route::get('/openrange/utg', 'HandrangeController@openutg');
+    Route::get('/openrange/hj', 'HandrangeController@openhj');
+    Route::get('/openrange/co', 'HandrangeController@openco');
+    Route::get('/openrange/btn', 'HandrangeController@openbtn');
+    Route::get('/openrange/sb', 'HandrangeController@opensb');
+    Route::get('/commingsoon', 'HandrangeController@commingsoon');
+});

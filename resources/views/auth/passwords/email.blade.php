@@ -1,4 +1,4 @@
-<!--パスワード再設定画面-->
+<!--パスワード再設定用emailアドレス識別画面-->
 @extends('app')
 
 @section('title', 'reset pass')
