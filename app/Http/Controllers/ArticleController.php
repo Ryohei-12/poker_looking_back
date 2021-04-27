@@ -20,12 +20,12 @@ class ArticleController extends Controller
 		return view("articles.index", ["articles" => $articles]);
 	}
     
-    //投稿作成ページのビューをarticles/sreateに設定
+    //投稿作成ページのビューをarticles/createに設定
 	function create(Request $request){
         return view('articles.create');
     }
 
-    //新規投稿処理・user_idはuserテーブルのidを参照・投稿時に「新規投稿しました」と表示
+    //user_idはuserテーブルのidを参照・投稿時に「新規投稿しました」と表示
      public function store(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
@@ -59,5 +59,5 @@ class ArticleController extends Controller
     {
         $article=Article::getArticle($article->id);
         return view('articles.show', ['article' => $article]);
-    } 
+    }
 }

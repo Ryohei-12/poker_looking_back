@@ -10,8 +10,6 @@ use App\Http\Requests\CommentRequest;
 
 class CommentsController extends Controller
 {
-    //コメント新規作成
-    //ユーザー情報はuserテーブルとリレーション
     //コメントをした投稿にリダイレクトする→「コメントをしました」とポップアップ出す
     public function store(CommentRequest $request,Comment $comment)
     {
