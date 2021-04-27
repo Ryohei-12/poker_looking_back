@@ -91,7 +91,7 @@
 		相手のショーダウンハンド：{{ $article->opponent_first_rank }}{{ $article->opponent_first_suit }},{{ $article->opponent_second_rank }}{{ $article->opponent_second_suit }} <br>
 		収支：{{ $article->result }} <br>
 		</p>
-    <!--コメント/改行を反映-->
+
 		コメント<br>
 		{!! nl2br($article->body) !!}
     </div>
