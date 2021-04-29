@@ -3,6 +3,10 @@
 
 @section('title', 'detail')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/articles/show.css') }}">
+@endsection
+
 @section('content')
   @include('nav')
 
@@ -16,16 +20,15 @@
     @endif
 
     <div class="container">
-      <button class="btn btn-dark" 
-      style="padding-bottom: 29px; background: linear-gradient(-135deg, #000000, #009966); font-size:13px; width:200px; height: 30px; margin-top:20px" 
+      <button class="btn btn-dark back-btn"
       onclick="location.href='/articles/index'">
-        タイムラインに戻る
+        一覧に戻る
       </button>
 
       @include('articles.card')
     
       <section>
-        <div class="card mt-3 mx-auto" style="background: linear-gradient(45deg, #000000, #009966)">
+        <div class="card mt-3 mx-auto comment-card">
           <div class="card-body d-flex flex-row">
             <div class="card-body pt-0">
               <h4 class="h5 mb-4 text-light">コメント</h4>
@@ -41,7 +44,7 @@
                         {{ $comment->user->name }}
                       </a>
                     </div>
-                    <time class="text-light" style="width: 10rem; float: left;">
+                    <time class="text-light comment-time">
                       {{ $comment->created_at->format('Y.m.d H:i') }}
                     </time>
                   
@@ -49,7 +52,7 @@
                     @if( Auth::id() === $comment->user_id )
                       <!-- dropdown -->
                         <div class="ml-auto card-text">
-                          <div class="dropdown" style="float: right;">
+                          <div class="dropdown float-right">
                             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               <i class="fas fa-ellipsis-v text-light"></i>
                             </a>
@@ -66,7 +69,7 @@
                         <!-- 削除modal -->
                         <div id="modal-delete-{{ $comment->id }}" class="modal fade" tabindex="-1" role="dialog">
                           <div class="modal-dialog" role="document">
-                            <div class="modal-content" style="background: linear-gradient(-135deg, #000000, #009966);">
+                            <div class="modal-content modal-style">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
                                   <span aria-hidden="true">&times;</span>
@@ -89,7 +92,7 @@
                         <!-- 削除modal終了 -->
                       @endif
 
-                    <div class="py-4">
+                    <div class="py-3">
                       <p class="mt-2 border-top">
                         {!! nl2br(e($comment->body)) !!}
                       </p>
@@ -99,7 +102,7 @@
 
                 <!--コメントがない際に表示-->
                 @if (empty($comment))
-                  <p style="color:light;">コメントはまだありません。</p>
+                  <p class="text-light">コメントはまだありません。</p>
                 @else
                 @endif
             </div>
@@ -114,9 +117,7 @@
           <!--CommentControllerにarticle_idを送る-->
           <input name="article_id" type="hidden" value="{{ $article->id }}">
             <label class="text-light" for="body">新規コメント</label>
-              <textarea name="body" class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" style="margin: 0 auto;">
-                {{ old('body') }}
-              </textarea>
+              <textarea name="body" class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}">{{ old('body') }}</textarea>
               @if ($errors->has('body'))
                 <div class="invalid-feedback">
                   {{ $errors->first('body') }}
@@ -126,8 +127,7 @@
         <div class="mt-4 ml-5">
           <div class="text-center">
             <button type="submit"
-            class="btn btn-dark"
-            style="background: linear-gradient(-135deg, #000000, #009966); font-size:20px; width:250px; height: 50px; margin:10px">
+            class="btn btn-dark comment-btn">
               コメントする
             </button>
           </div>

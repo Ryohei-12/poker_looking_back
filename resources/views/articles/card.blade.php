@@ -1,5 +1,9 @@
 <!--記事の内容-->
-<div class="card mt-3 mx-auto" style="width: 100%; background: linear-gradient(135deg, #000000, #009966)">
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/articles/card.css') }}">
+@endsection
+
+<div class="card mt-3 mx-auto card-style">
   <div class="card-body d-flex flex-row">
       <!--ユーザー詳細画面に遷移-->
       <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-light">
@@ -42,7 +46,7 @@
      <!-- 削除modal -->
       <div id="modal-delete-{{ $article->id }}" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
-          <div class="modal-content" style="background: linear-gradient(45deg, #000000, #009966)">
+          <div class="modal-content modal-style">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
                 <span aria-hidden="true">&times;</span>
@@ -98,7 +102,7 @@
 
     <!--投稿詳細ページに遷移-->
     <div class="mt-4">
-      <a style="color:#AAAAAA;" href="{{ route('articles.show', ['article' => $article]) }}">
+      <a class="detail-color" href="{{ route('articles.show', ['article' => $article]) }}">
         コメントを見る
       </a>
     </div>

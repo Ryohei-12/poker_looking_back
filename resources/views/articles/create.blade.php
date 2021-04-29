@@ -3,6 +3,10 @@
 
 @section('title', 'post new hand review')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/articles/create.css') }}">
+@endsection
+
 @section('content')
 	@include('nav')
 	
@@ -11,7 +15,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="card mt-3 mb-3" style="background: linear-gradient(-135deg, #000000, #009966)">
+          <div class="card mt-3 mb-3 card-style">
             <div class="card-body pt-0">
               @include('error_card_list')
               <div class="card-text">
@@ -19,8 +23,7 @@
                   @include('articles.form')
                   <div class="text-center">
                     <button type="submit"
-                    class="btn btn-dark"
-                    style="background: linear-gradient(135deg, #000000, #009966); padding-bottom: 31px; font-size:15px; width:210px; height: 40px; margin:10px;">
+                    class="btn btn-dark btn-gradient">
                       投稿する
                     </button>
                   </div>

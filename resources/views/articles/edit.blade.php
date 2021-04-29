@@ -3,16 +3,20 @@
 
 @section('title', 'update hand review')
 
-@include('nav')
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/articles/edit.css') }}">
+@endsection
 
 @section('content')
+  @include('nav')
+
 <body>
 <div class="jumbotron_all jumbotron-extend">
 	<div class="container text-light">
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="card mt-3" style="background: linear-gradient(-135deg, #000000, #009966)">
+            <div class="card mt-3 card-style">
               <div class="card-body pt-0">
                 @include('error_card_list')
                 <div class="card-text">
@@ -20,12 +24,12 @@
                   <form method="POST" action="{{ route('articles.update', ['article' => $article]) }}">
                     @method('PATCH')
                     @include('articles.form')
-                      <button type="submit" class="btn btn-dark mx-auto btn-block"
-                      style="padding-bottom: 31px; font-size:15px; width:210px; height: 40px; margin:10px;">
+                      <button type="submit"
+                      class="btn btn-dark mx-auto btn-block btn-gradient">
                         更新する
                       </button>
-                      <button onclick="location.href='/index'" class="btn btn-dark mx-auto btn-block"
-                      style="padding-bottom: 31px; font-size:15px; width:210px; height: 40px; margin:10px;">
+                      <button onclick="location.href='/index'"
+                      class="btn btn-dark mx-auto btn-block btn-gradient">
                         記事一覧へ戻る
                       </button>
                   </form>

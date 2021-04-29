@@ -3,9 +3,13 @@
 
 @section('title', 'sign up')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/auth/register.css') }}">
+@endsection
+
 @section('content')
 
-<div class="jumbotron_all jumbotron-extend" style="height: 100vh;">
+<div class="jumbotron_all jumbotron-extend jumbotron-height">
   <div class="container text-light">
     <div class="container">
       <div class="row">
@@ -16,7 +20,7 @@
               Poker looking back
             </a>
           </h1>
-          <div class="card mt-3" style="background: linear-gradient(-135deg, #000000, #009966);">
+          <div class="card mt-3 card-style">
             <div class="card-body text-center">
               <h2 class="h3 card-title text-light text-center mt-2">ユーザー登録</h2>
 
@@ -44,8 +48,7 @@
                     <label for="password_confirmation" class="text-light">パスワード(確認)</label>
                     <input class="form-control text-light" type="password" id="password_confirmation" name="password_confirmation" required>
                   </div>
-                  <button class="btn btn-block mt-2 mb-2 text-light" 
-                  style="background: linear-gradient(135deg, #000000, #009966);"
+                  <button class="btn btn-block mt-2 mb-2 text-light btn-style"
                   type="submit">
                     ユーザー登録
                   </button>

@@ -14,17 +14,14 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         if (Schema::hasTable('users')) {
-            // テーブルが存在していればリターン
             return;
         }
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('article_id');
+            $table->foreign('article_id')->references('id')->on('articles');
             $table->text('body');
             $table->timestamps();
-            
-            //'post_id'は'articles'テーブルの'id'から引っ張ってくる
-            $table->foreign('article_id')->references('id')->on('articles');
         });
     }
 

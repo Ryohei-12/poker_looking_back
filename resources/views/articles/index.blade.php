@@ -3,6 +3,10 @@
 
 @section('title', 'hand review forum')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/articles/index.css') }}">
+@endsection
+
 @section('content')
 	@include('nav')
 <body>
@@ -10,8 +14,7 @@
 		<div class="container text-light">
 			<div class="container text-light">	
 				<h1 class="text-center pt-3">Hand Forum</h1>
-				<button class="btn btn-dark px-0"
-				style="padding-bottom: 32px; font-size:15px; width:180px; height: 35px; margin:10px; background: linear-gradient(-135deg, #000000, #009966)" 
+				<button class="btn btn-dark px-0 btn-return"
 				onclick="location.href='/main'">
 					メインページに戻る
 				</button>

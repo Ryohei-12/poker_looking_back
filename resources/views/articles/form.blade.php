@@ -374,7 +374,7 @@
 
 <div class="md-form form-inline">
 	<label class="text-light">収支</label><br />
-	<input type="text" name="stack" placeholder="例:100.00" class="form-control col-3 text-light" value="{{ $article->result ?? old('result') }}">BB
+	<input type="text" name="result" placeholder="例:100.00" class="form-control col-3 text-light" value="{{ $article->result ?? old('result') }}">BB
 </div>
 
 <div class="form-group">

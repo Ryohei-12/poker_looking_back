@@ -1,0 +1,11 @@
+.jumbotron-height {
+	height: 100vh;
+}
+
+.card-style {
+	background: linear-gradient(-135deg, #000000, #009966);
+}
+
+.btn-style {
+	background: linear-gradient(135deg, #000000, #009966);
+}

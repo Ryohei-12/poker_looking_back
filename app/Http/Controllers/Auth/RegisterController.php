@@ -66,7 +66,7 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
     
-    //ユーザー新規登録の内容をUserテーブルに送る
+    //ユーザー新規登録処理
     protected function create(array $data)
     {
         return User::create([
