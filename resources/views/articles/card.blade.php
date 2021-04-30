@@ -1,5 +1,9 @@
 <!--記事の内容-->
-<div class="card mt-3 mx-auto" style="width: 100%; background: linear-gradient(135deg, #000000, #009966)">
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/articles/card.css') }}">
+@endsection
+
+<div class="card mt-3 mx-auto card-style">
   <div class="card-body d-flex flex-row">
       <!--ユーザー詳細画面に遷移-->
       <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-light">
@@ -26,7 +30,7 @@
           </a>
           <!--投稿更新ページに接続-->
           <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="{{ route("articles.edit", ['article' => $article]) }}">
+            <a class="dropdown-item" href="{{ route("articles.edit", ['article' => $article->id]) }}">
               <i class="fas fa-pen mr-1"></i>投稿を編集する
             </a>
             <!--投稿削除機能に接続-->
@@ -42,13 +46,13 @@
      <!-- 削除modal -->
       <div id="modal-delete-{{ $article->id }}" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
-          <div class="modal-content" style="background: linear-gradient(45deg, #000000, #009966)">
+          <div class="modal-content modal-style">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="POST" action="{{ route('articles.destroy', ['article' => $article]) }}">
+            <form method="POST" action="{{ route('articles.destroy', ['article' => $article->id]) }}">
               @csrf
               @method('DELETE')
               <div class="modal-body">
@@ -72,7 +76,7 @@
   <!--投稿内容-->
   <div class="card-body pt-0">
     <h3 class="h4 card-title">
-      <a class="text-light" href="{{ route('articles.show', ['article' => $article]) }}">
+      <a class="text-light" href="{{ route('articles.show', ['article' => $article->id]) }}">
         {{ $article->title }}
       </a>
     </h3>
@@ -98,7 +102,7 @@
 
     <!--投稿詳細ページに遷移-->
     <div class="mt-4">
-      <a style="color:#AAAAAA;" href="{{ route('articles.show', ['article' => $article]) }}">
+      <a class="detail-color" href="{{ route('articles.show', ['article' => $article->id]) }}">
         コメントを見る
       </a>
     </div>

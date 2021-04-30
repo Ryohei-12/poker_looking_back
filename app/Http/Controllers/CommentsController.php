@@ -10,7 +10,7 @@ use App\Http\Requests\CommentRequest;
 
 class CommentsController extends Controller
 {
-    //コメントをした投稿にリダイレクトする→「コメントをしました」とポップアップ出す
+    //コメント投稿処理
     public function store(CommentRequest $request,Comment $comment)
     {
         $comment->fill($request->all());
@@ -19,7 +19,7 @@ class CommentsController extends Controller
         return redirect()->route('articles.show', ['article' => $comment->article_id,])->with('commentstatus','コメントをしました');
     }
 
-    //コメント削除処理→「コメントを削除しました」とポップアップ出す
+    //コメント削除処理
     public function destroy(Comment $comment)
     {
         $comment->delete();

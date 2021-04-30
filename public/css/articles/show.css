@@ -1,0 +1,44 @@
+.back-btn {
+	padding-bottom: 29px;
+	background: linear-gradient(-135deg, #000000, #009966);
+	font-size: 13px;
+	width: 200px;
+	height: 30px;
+	margin-top: 20px;
+}
+
+.comment-card {
+	background: linear-gradient(45deg, #000000, #009966);
+}
+
+.comment-time {
+	width: 10rem; float: left;
+}
+
+.comment-btn {
+	background: linear-gradient(-135deg, #000000, #009966);
+	font-size: 20px;
+	width: 250px;
+	height: 50px;
+	margin: 10px
+}
+
+/*カード内CSS*/
+.card-style{
+	width: 100%;
+	background: linear-gradient(135deg, #000000, #009966);
+}
+
+.modal-style{
+	background: linear-gradient(45deg, #000000, #009966);
+}
+
+.detail-color{
+	color: #AAAAAA;
+}
+/*カード内CSS終了*/
+
+/*ナビバーCSS*/
+.nav-color {
+	background: linear-gradient(135deg, #000000, #009966);
+  }

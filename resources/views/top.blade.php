@@ -1,35 +1,16 @@
 <!--トップページ-->
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+@extends('app')
 
-	<title>top</title>
+@section('title', 'top')
 
-	<!--CSS-->
-	<style type="text/css">
-	html {
-		height: 100%;
-		margin: 0;}
-
-	.jumbotron { 
-		background-image:url(../img/background.PNG);
-		background-position: center center; 
-    	background-repeat: no-repeat;
-		background-size: cover;
-		background-attachment: fixed;
-		height: auto;
-		background-color:black;}
-    </style>
-</head>
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/top.css') }}">
+@endsection
 
 <body>
-	<div class="jumbotron jumbotron-extend">
+	<div class="jumbotron_all jumbotron-extend jumbotron-height">
 		<div class="container text-center text-light">
-			<h1>
+			<h1 class="pt-4">
 				Poker looking back
 			</h1>
 			<h5 class="mt-3">
@@ -43,14 +24,12 @@
 				レビューに特化した唯一のコミュニティ。
 			</p>
 			<div>
-				<button class="btn btn-dark" 
-				style="background: linear-gradient(-135deg, #000000, #009966); font-size:20px; width:160px; height: 60px; margin:10px" 
+				<button class="btn btn-dark btn-gradient"
 				onclick="location.href='/login'">
 					ログイン
 				</button></br>
 
-				<button class="btn btn-dark" 
-				style="background: linear-gradient(-135deg, #000000, #009966); font-size:20px; width:160px; height: 60px; margin:10px" 
+				<button class="btn btn-dark btn-gradient"
 				onclick="location.href='/register'">
 					新規登録
 				</button>

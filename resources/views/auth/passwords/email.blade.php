@@ -3,9 +3,13 @@
 
 @section('title', 'reset pass')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/auth/passwords/email.css') }}">
+@endsection
+
 @section('content')
 
-<div class="jumbotron_all jumbotron-extend" style="height: 100vh;">
+<div class="jumbotron_all jumbotron-extend jumbotron-height">
   <div class="container text-light">
     <div class="container">
       <div class="row">
@@ -15,7 +19,7 @@
               Poker looking back
             </a>
           </h1>
-          <div class="card mt-3" style="background: linear-gradient(-135deg, #000000, #009966);">
+          <div class="card mt-3 card-style">
             <div class="card-body text-center">
               <h2 class="h3 card-title text-center mt-2">パスワード再設定</h2>
 
@@ -33,13 +37,12 @@
                 <form method="POST" action="{{ route('password.email') }}">
                   @csrf
                   <div class="md-form">
-                    <label for="email" class="text-light">メールアドレス</label>
+                    <label for="email">メールアドレス</label>
                     <input class="form-control" type="text" id="email" name="email" required>
                   </div>
 
                   <button
-                  class="btn btn-block mt-2 mb-2 text-light"
-                  style="background: linear-gradient(135deg, #000000, #009966);"
+                  class="btn btn-block mt-2 mb-2 text-light btn-gradient"
                   type="submit">
                     メール送信
                   </button>

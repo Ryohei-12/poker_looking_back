@@ -1,0 +1,30 @@
+.jumbotron-height {
+	height: 100vh;
+}
+
+h1 {
+	padding-top:20px;
+	margin-bottom:30px;
+}
+
+.btn-style {
+	background: linear-gradient(-135deg, #000000, #009966);
+	font-size: 20px;
+	width: 250px;
+	height: 60px;
+	margin: 10px
+}
+
+.menu-btn {
+	background: linear-gradient(-135deg, #000000, #009966);
+	font-size: 14px;
+	width: 210px;
+	height: 40px;
+	margin: 40px;
+	padding-bottom: 32px;
+}
+
+/*ナビバーCSS*/
+.nav-color {
+	background: linear-gradient(135deg, #000000, #009966);
+  }

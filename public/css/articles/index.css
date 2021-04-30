@@ -1,0 +1,28 @@
+.btn-return{
+	padding-bottom: 32px;
+	font-size: 15px;
+	width: 180px;
+	height: 35px;
+	margin: 10px;
+	background: linear-gradient(-135deg, #000000, #009966);
+}
+
+/*カード内CSS*/
+.card-style{
+	width: 100%;
+	background: linear-gradient(135deg, #000000, #009966);
+}
+
+.modal-style{
+	background: linear-gradient(45deg, #000000, #009966);
+}
+
+.detail-color{
+	color: #AAAAAA;
+}
+/*カード内CSS終了*/
+
+/*ナビバーCSS*/
+.nav-color {
+	background: linear-gradient(135deg, #000000, #009966);
+  }

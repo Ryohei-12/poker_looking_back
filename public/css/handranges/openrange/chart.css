@@ -1,0 +1,22 @@
+.jumbotron-height {
+	height: 100vh;
+}
+
+h2 {
+	padding-top:10px;
+	margin-bottom:30px;
+}
+
+.back-btn {
+	background: linear-gradient(-135deg, #000000, #009966);
+	font-size:14px;
+	width:210px;
+	height: 40px;
+	margin: 15px;
+	padding-bottom: 32px;
+}
+
+/*ナビバーCSS*/
+.nav-color {
+	background: linear-gradient(135deg, #000000, #009966);
+  }

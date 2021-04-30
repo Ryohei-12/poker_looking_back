@@ -27,19 +27,16 @@ Route::get('/main', function () {
 });
 
 //ユーザーページ表示
-Route::prefix('users')->name('users.')->group(function () {
-    //ユーザーの詳細ページはユーザー名をURLに参照する
-    Route::get('/{name}', 'UserController@show')->name('show');
-});
+Route::get('users/{name}', 'UserController@show')->name('users.show');
 
 //投稿一覧
 Route::get('/articles/index', "ArticleController@index")->name('articles.index');
-//投稿作成・投稿・編集・更新・削除→ログインユーザーのみ
+//投稿作成・投稿・編集・更新・削除
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
 //投稿詳細画面
 Route::resource('/articles', 'ArticleController')->only(['show']);
 
-//コメント投稿・削除（コントローラーを作成すればCRUD可能）→ログインユーザーのみ    
+//コメント投稿・削除    
 Route::resource('comments', 'CommentsController')->middleware('auth');
 
 //各種ハンドレンジ表表示

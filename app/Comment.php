@@ -7,18 +7,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo; //リレーション用
 
 class Comment extends Model
 {
-    // 割り当て許可
     protected $fillable = [
         'body','article_id'
     ];
 
-    //記事とのリレーション
+    //投稿テーブルとのリレーション
     public function Article()
     {
         return $this->belongsTo('App\Article');
     }
 
-    //ユーザーとのリレーション
+    //ユーザーテーブルとのリレーション
     public function user()
     {
         return $this->belongsTo('App\User');

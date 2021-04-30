@@ -45,7 +45,7 @@ class Article extends Model
         ->get();
     }
 
-    //コメント・ユーザーテーブルの情報を取得、オブジェクト化・該当のユーザーを絞り込む
+    //コメント・ユーザーテーブルの情報を取得
     public static function getArticle($id)
     {
         return self::with(['comment.user'])
@@ -59,7 +59,7 @@ class Article extends Model
         return $this->belongsTo('App\User');
     }
 
-    //コメントを記事に所有させる（リレーション）
+    //コメントテーブルとのリレーション
     public function comment()
     {
         return $this->hasMany('App\Comment');

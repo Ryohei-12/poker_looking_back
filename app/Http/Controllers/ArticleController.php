@@ -13,48 +13,48 @@ class ArticleController extends Controller
         $this->authorizeResource(Article::class, 'article');
     }
     
-    //投稿一覧画面を表示
+    //投稿一覧
     function index(){
         $articles = Article::getArticles();
 
 		return view("articles.index", ["articles" => $articles]);
 	}
     
-    //投稿作成ページのビューをarticles/createに設定
+    //投稿作成画面遷移
 	function create(Request $request){
         return view('articles.create');
     }
 
-    //user_idはuserテーブルのidを参照・投稿時に「新規投稿しました」と表示
+    //投稿保存処理
      public function store(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
         $article->user_id = $request->user()->id;
         $article->save();
-        return redirect('articles/index')->with('poststatus', '新規投稿しました');
+        return redirect()->route('articles.index')->with('poststatus', '新規投稿しました');
 	}
 
-    //編集ページ表示（指定した投稿のレコードを取得しておく）
+    //投稿編集画面遷移
     public function edit(Article $article)
     {
         return view('articles.edit', ['article' => $article]);    
     }
 
-    //更新処理・更新時に「投稿を編集しました」と表示
+    //投稿更新処理
     public function update(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all())->save();
         return redirect()->route('articles.index')->with('poststatus', '投稿を編集しました');
     }
 
-    //記事削除処理・リダイレクト先は記事一覧
+    //投稿削除処理
     public function destroy(Article $article)
     {
         $article->delete();
         return redirect()->route('articles.index')->with('poststatus', '投稿を削除しました');
     }
 
-    //詳細表示処理・詳細画面のURLに指定した記事のidを参照する
+    //詳細表示処理
     public function show(Article $article)
     {
         $article=Article::getArticle($article->id);

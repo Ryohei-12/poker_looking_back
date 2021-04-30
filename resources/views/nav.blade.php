@@ -1,5 +1,5 @@
 <!--ナビバー-->
-<nav class="navbar navbar-expand navbar-dark" style="background: linear-gradient(135deg, #000000, #009966)">
+<nav class="navbar navbar-expand navbar-dark nav-color">
 
   <a class="navbar-brand" href="/main">
     <img src="{{ asset('img/logo.png') }}" alt="">

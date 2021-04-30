@@ -25,6 +25,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
+    //ログイン後メインページへ遷移
     protected $redirectTo = '/main';
 
     /**
@@ -32,6 +33,7 @@ class ResetPasswordController extends Controller
      *
      * @return void
      */
+    //コンストラクタ・ログアウトしたユーザー以外ゲスト
     public function __construct()
     {
         $this->middleware('guest');

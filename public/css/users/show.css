@@ -1,0 +1,8 @@
+.card-style {
+	background: linear-gradient(-135deg, #000000, #009966);
+}
+
+/*ナビバーCSS*/
+.nav-color {
+	background: linear-gradient(135deg, #000000, #009966);
+  }

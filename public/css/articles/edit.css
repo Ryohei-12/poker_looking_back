@@ -1,0 +1,17 @@
+.card-style {
+	background: linear-gradient(-135deg, #000000, #009966);
+}
+
+.btn-gradient {
+	padding-bottom: 31px;
+	font-size: 15px;
+	width: 210px;
+	height: 40px;
+	margin: 10px;
+	background: linear-gradient(-135deg, #000000, #009966);
+}
+
+/*ナビバーCSS*/
+.nav-color {
+	background: linear-gradient(135deg, #000000, #009966);
+  }

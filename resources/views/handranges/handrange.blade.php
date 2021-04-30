@@ -1,40 +1,40 @@
 <!--ハンドレンジ表、シチュエーション選択画面-->
 @extends('app')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/handranges/handrange.css') }}">
+@endsection
+
 @section('title', 'choose situation')
 	@include('nav')
 
 	<body>
-		<div class="jumbotron_all jumbotron-extend" style="height: 100vh;">
+		<div class="jumbotron_all jumbotron-extend jumbotron-height">
 			<div class="container text-center text-light">
 
-				<h1 style="padding-top:10px; margin-bottom:30px">Hand Range</h1>
+				<h1>Hand Range</h1>
 
 				シチュエーションを選んでください<br/>
 				<button 
-				class="btn btn-dark" 
-				style="background: linear-gradient(-135deg, #000000, #009966); font-size:20px; width:250px; height: 60px; margin:10px"
+				class="btn btn-dark btn-style"
 				onclick="location.href='/range/openrange'">
 				Open Range
 				</button><br />
 
 				<button
-				class="btn btn-dark"
-				style="background: linear-gradient(-135deg, #000000, #009966); font-size:20px; width:250px; height: 60px; margin:10px"
+				class="btn btn-dark  btn-style"
 				onclick="location.href='/range/commingsoon'">
 				Facing A Raise
 				</button><br />
 
 				<button
-				class="btn btn-dark"
-				style="background: linear-gradient(-135deg, #000000, #009966); font-size:20px; width:250px; height: 60px; margin:10px"
+				class="btn btn-dark  btn-style"
 				onclick="location.href='/range/commingsoon'">
 				Facing A 3Bet
 				</button><br />
 
 				<button
-				class="btn btn-dark"
-				style="background: linear-gradient(-135deg, #000000, #009966); font-size:14px; width:210px; height: 40px; margin:40px; padding-bottom: 32px;"
+				class="btn btn-dark menu-btn"
 				onclick="location.href='/main'">
 				メインページに戻る
 				</button>
