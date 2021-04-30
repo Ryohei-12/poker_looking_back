@@ -30,7 +30,7 @@
           </a>
           <!--投稿更新ページに接続-->
           <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="{{ route("articles.edit", ['article' => $article]) }}">
+            <a class="dropdown-item" href="{{ route("articles.edit", ['article' => $article->id]) }}">
               <i class="fas fa-pen mr-1"></i>投稿を編集する
             </a>
             <!--投稿削除機能に接続-->
@@ -52,7 +52,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="POST" action="{{ route('articles.destroy', ['article' => $article]) }}">
+            <form method="POST" action="{{ route('articles.destroy', ['article' => $article->id]) }}">
               @csrf
               @method('DELETE')
               <div class="modal-body">
@@ -76,7 +76,7 @@
   <!--投稿内容-->
   <div class="card-body pt-0">
     <h3 class="h4 card-title">
-      <a class="text-light" href="{{ route('articles.show', ['article' => $article]) }}">
+      <a class="text-light" href="{{ route('articles.show', ['article' => $article->id]) }}">
         {{ $article->title }}
       </a>
     </h3>
@@ -102,7 +102,7 @@
 
     <!--投稿詳細ページに遷移-->
     <div class="mt-4">
-      <a class="detail-color" href="{{ route('articles.show', ['article' => $article]) }}">
+      <a class="detail-color" href="{{ route('articles.show', ['article' => $article->id]) }}">
         コメントを見る
       </a>
     </div>

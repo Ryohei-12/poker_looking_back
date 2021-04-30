@@ -35,7 +35,7 @@
 					@endforeach
 
 					@if(count($articles) < 1)
-					<p>投稿がありません</p>
+					<h3 class="text-center">投稿がありません</h3>
 					@endif
 				</div>
 			</div>

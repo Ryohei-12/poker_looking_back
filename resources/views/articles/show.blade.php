@@ -11,15 +11,14 @@
   @include('nav')
 
 <div class="jumbotron_all jumbotron-extend">
-  <div class="container text-light">
-    <!--編集・コメントした際にコントローラーで指定したメッセージ表示-->
-    @if (session('commentstatus'))
-      <div class="alert alert-success mt-4 mb-4">
-          {{ session('commentstatus') }}
-      </div>
-    @endif
-
-    <div class="container">
+  <div class="container">
+    <div class="container text-light">
+      <!--編集・コメントした際にコントローラーで指定したメッセージ表示-->
+      @if (session('commentstatus'))
+        <div class="alert alert-success mb-4">
+            {{ session('commentstatus') }}
+        </div>
+      @endif
       <button class="btn btn-dark back-btn"
       onclick="location.href='/articles/index'">
         一覧に戻る
@@ -114,7 +113,7 @@
     <form class="mb-4" method="POST" action="{{ route('comments.store') }}">
       @csrf
         <div class="form-group mt-4">
-          <!--CommentControllerにarticle_idを送る-->
+          <!--CommentControllerにarticleのidを送る-->
           <input name="article_id" type="hidden" value="{{ $article->id }}">
             <label class="text-light" for="body">新規コメント</label>
               <textarea name="body" class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}">{{ old('body') }}</textarea>
