@@ -67,6 +67,7 @@ class ArticleTest extends TestCase
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function first_rankが空欄の場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -90,6 +91,7 @@ class ArticleTest extends TestCase
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function first_suitが空欄の場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -113,6 +115,7 @@ class ArticleTest extends TestCase
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function second_rankが空欄の場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -136,6 +139,7 @@ class ArticleTest extends TestCase
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function second_suitが空欄の場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -159,6 +163,7 @@ class ArticleTest extends TestCase
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function ポジションが空欄の場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -182,6 +187,7 @@ class ArticleTest extends TestCase
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function スタックが空欄の場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -205,6 +211,7 @@ class ArticleTest extends TestCase
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function プリフロップのアクションが空欄の場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -228,6 +235,7 @@ class ArticleTest extends TestCase
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function コメントが空欄の場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -251,6 +259,7 @@ class ArticleTest extends TestCase
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function タイトルが文字数オーバーの場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -274,6 +283,7 @@ class ArticleTest extends TestCase
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function コメントが文字数オーバーの場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -293,10 +303,11 @@ class ArticleTest extends TestCase
             'body' => str_repeat('a', 501),
         ];
         $response = $this->post(route('articles.store'), $data);
-        $validation = 'タイトルは、500文字以下で指定してください。';
+        $validation = 'コメントは、500文字以下で指定してください。';
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function スタックが数値以外の場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -320,6 +331,7 @@ class ArticleTest extends TestCase
         $this->get(route('articles.create'))->assertSee($validation);
     }
 
+    /** @test */
     public function 収支が数値以外の場合はバリデーションメッセージが表示される()
     {
         //登録処理
@@ -340,6 +352,102 @@ class ArticleTest extends TestCase
         ];
         $response = $this->post(route('articles.store'), $data);
         $validation = '収支には、数字を指定してください。';
+        $this->get(route('articles.create'))->assertSee($validation);
+    }
+
+    /** @test */
+    public function first_rankが選択肢以外の値の場合はバリデーションメッセージが表示される()
+    {
+        //登録処理
+        $user = factory(\App\User::class)->create();
+        //ログイン処理
+        $this->actingAs($user);
+        $data = [
+            'title' => 'タイトル',
+            'first_rank' => 'あ',
+            'first_suit' => 's',
+            'second_rank' => '2',
+            'second_suit' => 'd',
+            'position' => 'BB',
+            'stack' => '100',
+            'action_at_preflop' => 'オールイン',
+            'result' => '1.5',
+            'body' => 'テスト',
+        ];
+        $response = $this->post(route('articles.store'), $data);
+        $validation = '選択されたスターティングハンドは正しくありません。';
+        $this->get(route('articles.create'))->assertSee($validation);
+    }
+
+    /** @test */
+    public function first_suitが選択肢以外の値の場合はバリデーションメッセージが表示される()
+    {
+        //登録処理
+        $user = factory(\App\User::class)->create();
+        //ログイン処理
+        $this->actingAs($user);
+        $data = [
+            'title' => 'タイトル',
+            'first_rank' => '2',
+            'first_suit' => 'あ',
+            'second_rank' => '2',
+            'second_suit' => 'd',
+            'position' => 'BB',
+            'stack' => '100',
+            'action_at_preflop' => 'オールイン',
+            'result' => '1.5',
+            'body' => 'テスト',
+        ];
+        $response = $this->post(route('articles.store'), $data);
+        $validation = '選択されたスターティングハンドは正しくありません。';
+        $this->get(route('articles.create'))->assertSee($validation);
+    }
+
+    /** @test */
+    public function second_rankが選択肢以外の値の場合はバリデーションメッセージが表示される()
+    {
+        //登録処理
+        $user = factory(\App\User::class)->create();
+        //ログイン処理
+        $this->actingAs($user);
+        $data = [
+            'title' => 'タイトル',
+            'first_rank' => '2',
+            'first_suit' => 's',
+            'second_rank' => 'あ',
+            'second_suit' => 'd',
+            'position' => 'BB',
+            'stack' => '100',
+            'action_at_preflop' => 'オールイン',
+            'result' => '1.5',
+            'body' => 'テスト',
+        ];
+        $response = $this->post(route('articles.store'), $data);
+        $validation = '選択されたスターティングハンドは正しくありません。';
+        $this->get(route('articles.create'))->assertSee($validation);
+    }
+
+    /** @test */
+    public function second_suitが選択肢以外の値の場合はバリデーションメッセージが表示される()
+    {
+        //登録処理
+        $user = factory(\App\User::class)->create();
+        //ログイン処理
+        $this->actingAs($user);
+        $data = [
+            'title' => 'タイトル',
+            'first_rank' => '2',
+            'first_suit' => 's',
+            'second_rank' => '2',
+            'second_suit' => 'あ',
+            'position' => 'BB',
+            'stack' => '100',
+            'action_at_preflop' => 'オールイン',
+            'result' => '1.5',
+            'body' => 'テスト',
+        ];
+        $response = $this->post(route('articles.store'), $data);
+        $validation = '選択されたスターティングハンドは正しくありません。';
         $this->get(route('articles.create'))->assertSee($validation);
     }
 

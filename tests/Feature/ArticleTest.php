@@ -152,21 +152,6 @@ class ArticleTest extends TestCase
         $response->assertStatus(404);
     }
 
-    public function 詳細画面には特定の投稿が表示される()
-    {
-        //登録処理
-        $user = factory(\App\User::class)->create();
-        //ログイン処理
-        $this->actingAs($user);
-        //投稿処理
-        $item = factory(\App\Article::class)->create([
-            'user_id' => $user->id,
-        ]);
-        //直前の投稿の詳細画面に遷移
-        $response = $this->get(route('articles.show', $item->id));
-        $response->assertViewHas('item', $item);
-    }
-
     /** @test */
     public function 詳細画面で投稿に紐付く投稿者名が表示される()
     {
