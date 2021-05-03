@@ -35,7 +35,7 @@
                   <!--コメント一覧-->  
                   @foreach($article->comment as $comment)
                     <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-light">
-                      <i class="fab fa-bitcoin fa-2x mr-1"></i>
+                      <i class="fas fa-user-circle fa-2x mr-1"></i>
                     </a>
                   <div>
                     <div class="font-weight-bold">
