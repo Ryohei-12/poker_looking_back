@@ -24,11 +24,21 @@ class ArticleRequest extends FormRequest
 
     //記事のタイトル50文字以下
     //本文500文字以下
+    //スタックと収支は数値
+    //その他必須項目のバリデーション
     public function rules()
     {
         return [
             'title' => 'required|max:50',
             'body' => 'required|max:500',
+            'stack' => 'required|numeric',
+            'result' => 'numeric',
+            'first_rank' => 'required',
+            'first_suit' => 'required',
+            'second_rank' => 'required',
+            'second_suit' => 'required',
+            'position' => 'required',
+            'action_at_preflop' => 'required',
         ];
     }
 
@@ -37,7 +47,15 @@ class ArticleRequest extends FormRequest
     {
         return [
             'title' => 'タイトル',
-            'body' => '本文',
+            'body' => 'コメント',
+            'stack' => 'スタック',
+            'result' => '収支',
+            'first_rank' => 'スターティングハンド',
+            'first_suit' => 'スターティングハンド',
+            'second_rank' => 'スターティングハンド',
+            'second_suit' => 'スターティングハンド',
+            'position' => 'ポジション',
+            'action_at_preflop' => 'プリフロップのアクション',
         ];
     }
 }

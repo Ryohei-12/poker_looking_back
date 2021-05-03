@@ -36,7 +36,7 @@ Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->mi
 //投稿詳細画面
 Route::resource('/articles', 'ArticleController')->only(['show']);
 
-//コメント投稿・削除    
+//コメント投稿・削除
 Route::resource('comments', 'CommentsController')->middleware('auth');
 
 //各種ハンドレンジ表表示

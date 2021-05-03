@@ -21,7 +21,7 @@
                 @include('error_card_list')
                 <div class="card-text">
                   <!--articleコントローラーのupdate起動-->
-                  <form method="POST" action="{{ route('articles.update', ['article' => $article]) }}">
+                  <form method="PATCH" action="{{ route('articles.update', ['article' => $article]) }}">
                     @method('PATCH')
                     @include('articles.form')
                       <button type="submit"
