@@ -16,7 +16,6 @@ class ArticleController extends Controller
     //投稿一覧
     function index(){
         $articles = Article::getArticles();
-
 		return view("articles.index", ["articles" => $articles]);
 	}
     

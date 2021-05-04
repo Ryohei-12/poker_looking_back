@@ -8,7 +8,7 @@
 
 	<!--選択肢表示・編集時は以前の入力内容を保持-->
 	<label class="text-light">ハンド</label><br />
-	<select name="first_rank">
+	<select name="first_rank" required>
 		@php
 		$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
 		foreach($rank as $rank){
@@ -25,7 +25,7 @@
 		@endphp
 	</select>
 
-	<select name="first_suit">
+	<select name="first_suit" required>
 	@php
 	$suit = array('', 's', 'h', 'd', 'c');
 	foreach($suit as $suit){
@@ -42,7 +42,7 @@
 	@endphp
 	</select>
 
-	<select name="second_rank">
+	<select name="second_rank" required>
 		@php
 		$rank = array('', 'A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
 		foreach($rank as $rank){
@@ -59,7 +59,7 @@
 		@endphp
 	</select>
 
-	<select name="second_suit">
+	<select name="second_suit" required>
 		@php
 		$suit = array('', 's', 'h', 'd', 'c');
 		foreach($suit as $suit){
@@ -79,7 +79,7 @@
 
 <div class="form-group">
 	<label class="text-light">ポジション</label><br />
-	<select name="position">
+	<select name="position" required>
 	@php
 	$position = array('', 'UTG', 'EP2', 'EP3', 'MP1', 'MP2', 'MP3', 'CO', 'BTN', 'SB', 'BB');
 	foreach($position as $position){
@@ -99,12 +99,12 @@
 
 <div class="md-form form-inline">
 	<label class="text-light">スタック</label>
-	<input type="text" name="stack" placeholder="例:100.00" class="form-control col-3 text-light" value="{{ $article->stack ?? old('stack') }}">BB
+	<input type="text" name="stack" placeholder="例:100.00" class="form-control col-3 text-light" value="{{ $article->stack ?? old('stack') }}" required>BB
 </div>
 
 <div class="form-group">
 	<label class="text-light">プリフロップのアクション</label><br />
-	<textarea name="action_at_preflop">{{ $article->action_at_preflop ?? old('action_at_preflop') }}</textarea>
+	<textarea name="action_at_preflop" required>{{ $article->action_at_preflop ?? old('action_at_preflop') }}</textarea>
 </div>
 
 <div class="form-group">
