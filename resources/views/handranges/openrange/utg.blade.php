@@ -13,7 +13,7 @@
 			<div class="container text-center text-light">
 				<h2>Open Raise Range From UTG</h2>
 
-				<img src="{{ asset('img/open_UTG.png') }}" alt="">
+				<img src="{{ asset('/img/open_UTG.png') }}" alt="">
 				<br/>
 
 				※orange = Raise<br />
