@@ -15,7 +15,7 @@ class AddUserIdArticlesTable extends Migration
     {
         Schema::table('articles', function (Blueprint $table) {
             //ユーザーテーブルとの外部キー制約
-            $table->integer('user_id', 20)->unsigned()->nullable()->default(NULL);
+            $table->integer('user_id')->unsigned()->nullable()->default(NULL);
             $table->index('user_id');
             $table->foreign('user_id')
                     ->references('id')
