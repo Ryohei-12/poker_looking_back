@@ -27,6 +27,10 @@
 			@foreach($articles as $article)
 			@include('articles.card')
 			@endforeach
+			@if(count($articles) < 1)
+				<h3 class="text-center mt-5 under">まだ投稿がありません</h3>
+			@endif
+
 		</div>
 	</div>
 </div>
