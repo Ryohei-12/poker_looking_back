@@ -22,7 +22,7 @@
 				<button class="btn btn-dark btn-style" onclick="location.href='/range/openrange/sb'">SB</button><br />
 			
 				<button class="btn btn-dark back-btn" onclick="location.href='/range'">
-				シチュエーション選択
+				シチュエーション選択に戻る
 				</button>
 	
 			</div>
