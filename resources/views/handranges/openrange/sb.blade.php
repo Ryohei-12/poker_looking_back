@@ -14,7 +14,7 @@
 
 				<h2>Open Raise Range From SB</h2>
 
-				<img src="{{ asset('/img/open_SB.png') }}" alt="">
+				<img src="{{ asset('/storage/img/open_SB.png') }}" alt="">
 				<br/>
 
 				<p class="mt-3">※orange = Raise</p>

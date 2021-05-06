@@ -1,3 +1,13 @@
+.jumbotron_all {
+	background-image: url(/img/background.PNG);
+	background-position: center center; 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: auto;
+	z-index: 1;
+}
+
 .back-btn {
 	padding-bottom: 29px;
 	background: linear-gradient(-135deg, #000000, #009966);
