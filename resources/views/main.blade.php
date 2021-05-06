@@ -10,7 +10,7 @@
 @include('nav')
 
 <body>
-<div class="jumbotron_all jumbotron-extend jumbotron-height">
+<div class="jumbotron jumbotron-extend jumbotron-height">
 	<div class="container text-center text-light">
 		<div class="pt-5">
 			気になったハンドを投稿する</br>

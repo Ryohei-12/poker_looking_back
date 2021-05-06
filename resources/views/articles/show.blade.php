@@ -10,7 +10,7 @@
 @section('content')
   @include('nav')
 
-<div class="jumbotron_all jumbotron-extend">
+<div class="jumbotron jumbotron-extend">
   <div class="container">
     <div class="container text-light">
       <!--編集・コメントした際にコントローラーで指定したメッセージ表示-->

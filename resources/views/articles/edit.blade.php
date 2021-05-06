@@ -11,7 +11,7 @@
   @include('nav')
 
 <body>
-<div class="jumbotron_all jumbotron-extend">
+<div class="jumbotron jumbotron-extend">
 	<div class="container text-light">
       <div class="container">
         <div class="row">

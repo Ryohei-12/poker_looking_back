@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<div class="jumbotron_all jumbotron-extend jumbotron-height">
+<div class="jumbotron jumbotron-extend jumbotron-height">
   <div class="container text-light">
     <div class="container">
       <div class="row">

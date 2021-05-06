@@ -9,7 +9,7 @@
 	@include('nav')
 
 	<body>
-		<div class="jumbotron_all jumbotron-extend jumbotron-height">
+		<div class="jumbotron jumbotron-extend jumbotron-height">
 			<div class="container text-center text-light">
 				<h1>Comming Soon</h1>
 				<button class="btn btn-dark back-btn mt-5" onclick="location.href='/range'">
