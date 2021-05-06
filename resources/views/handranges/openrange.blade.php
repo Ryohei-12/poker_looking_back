@@ -9,7 +9,7 @@
 	@include('nav')
 
 	<body>
-		<div class="jumbotron_all jumbotron-extend jumbotron-height">
+		<div class="jumbotron jumbotron-extend jumbotron-height">
 			<div class="container text-center text-light">
 
 				<h1>Open Range</h1>
