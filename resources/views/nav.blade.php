@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand navbar-dark nav-color">
 
   <a class="navbar-brand" href="/main">
-    <img src="{{ asset('img/logo.png') }}" alt="">
+    <img src="{{ asset('/storage/img/logo.png') }}" alt="">
     Poker looking back
   </a>
 
