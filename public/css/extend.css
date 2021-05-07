@@ -52,7 +52,7 @@ table {
 }
 
 .jumbotron-extend {
-	background: url(../storage/img/background.PNG);
+	background: url(/storage/img/background.PNG);
 	background-position: center center; 
 	background-repeat: no-repeat;
 	background-attachment: fixed;
