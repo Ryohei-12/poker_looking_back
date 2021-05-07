@@ -12,7 +12,6 @@
 - CSS
 - XAMPP
 - MySQL
-- heroku
 
 ## アプリケーションURL
 https://poker-looking-back.herokuapp.com/
