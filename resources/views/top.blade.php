@@ -3,6 +3,9 @@
 
 @section('title', 'top')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/top.css') }}">
+@endsection
 
 <body>
 	<div class="jumbotron jumbotron-extend jumbotron-height">
