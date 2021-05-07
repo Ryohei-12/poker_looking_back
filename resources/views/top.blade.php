@@ -3,9 +3,6 @@
 
 @section('title', 'top')
 
-@section('css')
-    <link rel="stylesheet" href="{{ asset('/css/top.css') }}">
-@endsection
 
 <body>
 	<div class="jumbotron jumbotron-extend jumbotron-height">
@@ -24,7 +21,7 @@
 				レビューに特化した唯一のコミュニティ。
 			</p>
 			<div>
-				<button class="btn btn-dark btn-gradient"
+				<button class="btn btn-dark btn-gradient mt-4"
 				onclick="location.href='/login'">
 					ログイン
 				</button></br>
@@ -34,7 +31,7 @@
 					新規登録
 				</button>
 			</div>
-			<h3 class="mt-4">
+			<h3 class="mt-5">
 				印象に残ったハンドを記録
 			</h3>
 			<p>
