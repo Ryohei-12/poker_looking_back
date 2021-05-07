@@ -46,7 +46,7 @@ https://poker-looking-back.herokuapp.com/
 |	password	|	string	|null: false	|
 
 #### relation
-has_many :articles
+has_many :articles  
 has_many :comments
 
 ### ▼articles
@@ -82,7 +82,7 @@ has_many :comments
 |	body	|	string	|	null: false	|
 |	user_id |	integer	|	foreign_key: true	|
 #### relation
-belongs_to :user
+belongs_to :user  
 has_many :comments
 
 ### ▼comments
@@ -93,7 +93,7 @@ has_many :comments
 |	user_id |	integer	|	foreign_key: true	|
 |	body	|	string	|	null: false	|
 #### relation
-belongs_to :user
+belongs_to :user  
 belongs_to :article
 
 ## テスト
