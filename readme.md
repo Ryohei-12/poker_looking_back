@@ -36,7 +36,7 @@ pass:sample11
 - ユーザー個別の投稿表示機能
 
 ## テーブル設計
-### users
+### ▼users
 |	Column	|	Type	|	Options	|
 |-----------|-----------|-----------|
 |	id		|	integer	|	null: false, unique: true	|
@@ -48,7 +48,7 @@ pass:sample11
 has_many :articles
 has_many :comments
 
-### articles
+### ▼articles
 |	Column	|	Type	|	Options	|
 |-----------|-----------|-----------|
 |	id	|	integer	|	null: false	|
@@ -84,7 +84,7 @@ has_many :comments
 belongs_to :user
 has_many :comments
 
-### comments
+### ▼comments
 |	Column	|	Type	|	Options	|
 |-----------|-----------|-----------|
 |	id	|	integer	|	null: false	|
