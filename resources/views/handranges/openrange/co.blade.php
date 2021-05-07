@@ -14,7 +14,7 @@
 
 				<h2>Open Raise Range From CO</h2>
 
-				<img src="{{ asset('/storage/img/open_CO.png') }}" alt="">
+				<img src="{{ asset('/storage/img/open_CO.png') }}" alt="" class="img-fluid">
 				<br/>
 
 				<p class="mt-3">※orange = Raise</p>
