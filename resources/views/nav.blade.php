@@ -1,7 +1,7 @@
 <!--ナビバー-->
 <nav class="navbar navbar-expand navbar-dark nav-color">
 
-  <a class="navbar-brand" href="/main">
+  <a class="navbar-brand d-flex align-items-center" href="/main">
     <img src="{{ asset('/storage/img/logo.png') }}" alt="">
     Poker looking back
   </a>
