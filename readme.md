@@ -46,7 +46,7 @@ https://poker-looking-back.herokuapp.com/
 |	password	|	string	|null: false	|
 
 #### relation
-has_many :articles
+has_many :articles  
 has_many :comments
 
 ### ▼articles
