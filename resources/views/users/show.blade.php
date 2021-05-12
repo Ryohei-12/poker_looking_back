@@ -13,7 +13,7 @@
   
 <div class="jumbotron jumbotron-extend">
 	<div class="container">
-		<div class="container pt-3 text-light">
+		<div class="container text-light">
 			<!--プロフィール編集した際にコントローラーで指定したメッセージを表示する-->
 			@if (session('poststatus'))
 				<div class="alert alert-success mt-4 mb-4">

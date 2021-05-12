@@ -25,33 +25,32 @@
               <!--プロフィール編集フォーム-->
               <div class="card-text text-light">
                 <form enctype="multipart/form-data" method="POST" action="{{ route('users.update', ['user' => $user]) }}">
-				@method('PATCH')
-                  @csrf
-				  	<input type="hidden" name="id" value="{{ $user->id }}" />
-					    <div class="form-group">
-            		<label for="icon_images" class="mb-2">アイコン</label><br>
-							    @if ($user->icon_images)
-                    <p>
-                      <img class="round-img" src="{{ asset('storage/user_images/' . $user->icon_images) }}" alt="icon" />
-                    </p>
-                  @endif
-						<input type="file" name="icon_images"  value="{{ old('icon_images',$user->id) }}" accept="image/jpeg,image/gif,image/png" />
-        			</div>
-					<div class="md-form text-text-light">
-						<label for="name" class="text-light mt-2">ユーザー名</label>
-						<input class="form-control text-light" type="text" name="name" value="{{ old('name',$user->name) }}">
-						<small>3〜16文字</small>
-					</div>
-					<div class="md-form">
-						<label for="email" class="text-light mt-2">メールアドレス</label>
-						<input class="form-control text-light" type="text" id="email" name="email" value="{{ old('email',$user->email) }}" >
-					</div>
-					<button class="btn btn-block mt-2 mb-2 text-light btn-style"
-					type="submit">
-						変更する
-					</button>
+				          @method('PATCH')
+                    @csrf
+                      <input type="hidden" name="id" value="{{ $user->id }}" />
+                        <div class="form-group">
+                          <label for="icon_images" class="mb-2">アイコン</label><br>
+                          @if ($user->icon_images)
+                            <p>
+                              <img class="round-img" src="{{ asset('storage/user_images/' . $user->icon_images) }}" alt="icon" />
+                            </p>
+                          @endif
+                          <input type="file" name="icon_images"  value="{{ old('icon_images',$user->id) }}" accept="image/jpeg,image/gif,image/png" />
+                        </div>
+                      <div class="md-form text-text-light">
+                        <label for="name" class="text-light mt-2">ユーザー名</label>
+                        <input class="form-control text-light" type="text" name="name" value="{{ old('name',$user->name) }}">
+                        <small>3〜16文字</small>
+                      </div>
+                      <div class="md-form">
+                        <label for="email" class="text-light mt-2">メールアドレス</label>
+                        <input class="form-control text-light" type="text" id="email" name="email" value="{{ old('email',$user->email) }}" >
+                      </div>
+                      <button class="btn btn-block mt-2 mb-2 text-light btn-style"
+                      type="submit">
+                        変更する
+                      </button>
                 </form>
-
               </div>
             </div>
           </div>

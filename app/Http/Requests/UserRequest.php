@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UserRequest extends FormRequest
 {
@@ -21,12 +22,26 @@ class UserRequest extends FormRequest
      *
      * @return array
      */
+
+    //3〜16文字のユニークユーザー
+    //メールアドレスの形でユニーク
     public function rules()
     {
         return [
             'icon_images' => 'file|image|mimes:jpeg,png,jpg|max:2048',
-            'name' => 'required', 'string', 'min:3', 'max:16', 'unique:users', //3〜16文字のユニークユーザー
-            'email' => 'required', 'string', 'email', 'max:255', 'unique:users', //メールアドレスの形でユニーク
+            'name' => [
+                'required',
+                'string',
+                'min:3',
+                'max:16',
+                Rule::unique('users')->ignore($this->user),
+            ], 
+            'email' => [
+                'required',
+                'max:255',
+                'email',
+                Rule::unique('users')->ignore($this->user),
+            ], 
         ];
     }
 
