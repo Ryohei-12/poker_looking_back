@@ -6,14 +6,21 @@
 <div class="card mt-3 mx-auto card-style">
   <div class="card-body d-flex flex-row">
       <!--ユーザー詳細画面に遷移-->
-      <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-light">
-        <i class="fas fa-user-circle fa-3x mr-1"></i>
+      <a href="{{ route("users.show", ["user" => $article->user->id]) }}" class="text-light">
+        <?php $user = $article->user; ?>
+        @if ($user->icon_images)
+        	<p>
+    				<img class="round-img mr-1" src="{{ asset('storage/user_images/' . $user->icon_images) }}"/>
+        	</p>
+      	@else
+					<i class="fas fa-user-circle fa-3x mr-1"></i>
+    			@endif
       </a>
     
     <div>
       <div class="font-weight-bold text-light">
         <!--ユーザー詳細画面に遷移-->
-        <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-light">
+        <a href="{{ route("users.show", ["user" => $article->user->id]) }}" class="text-light">
         {{ $article->user->name }}
         </a>
       </div>

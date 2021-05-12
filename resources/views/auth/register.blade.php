@@ -12,9 +12,9 @@
 <div class="jumbotron jumbotron-extend jumbotron-height">
   <div class="container text-light">
     <div class="container">
-      <div class="row">
+      <div class="flex-row">
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6">
-          <h1 class="text-center mt-3">
+          <h1 class="text-center d-flex mb-5 align-items-center">
             <a class="text-light" href="/">
               <img src="{{ asset('img/logo.png') }}" alt="">
               Poker looking back
@@ -33,7 +33,7 @@
                   <div class="md-form text-text-light">
                     <label for="name" class="text-light">ユーザー名</label>
                     <input class="form-control text-light" type="text" id="name" name="name" value="{{ old('name') }}">
-                    <small>3〜16文字(登録後の変更はできません)</small>
+                    <small>3〜16文字</small>
                   </div>
                   <div class="md-form">
                     <label for="email" class="text-light">メールアドレス</label>

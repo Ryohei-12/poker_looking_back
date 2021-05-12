@@ -2,12 +2,18 @@
 	height: 100vh;
 }
 
-.btn-gradient {
+.card-style {
 	background: linear-gradient(-135deg, #000000, #009966);
-	font-size: 20px;
-	width: 300px;
-	height: 60px;
-	margin: 10px
+}
+
+.btn-style {
+	background: linear-gradient(135deg, #000000, #009966);
+}
+
+.round-img{
+	border-radius:50%;
+	width: 50px;
+	height: 50px;
 }
 
 /*ナビバーCSS*/
