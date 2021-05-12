@@ -25,7 +25,7 @@
 					<div class="d-flex flex-row align-items-center">
 					@if ($user->icon_images)
         				<p>
-    						<img class="round-img" src="{{ asset('storage/user_images/' . $user->icon_images) }}"/>
+    						<img class="round-img" src="{{ Storage::disk('s3')->url(Auth::user()->icon_images) }}"/>
         				</p>
         			@else
 						<i class="fas fa-user-circle fa-3x mr-1"></i>

@@ -10,7 +10,7 @@
         <?php $user = $article->user; ?>
         @if ($user->icon_images)
         	<p>
-    				<img class="round-img mr-1" src="{{ asset('storage/user_images/' . $user->icon_images) }}"/>
+    				<img class="round-img mr-1" src="{{ Storage::disk('s3')->url($user->icon_images) }}"/>
         	</p>
       	@else
 					<i class="fas fa-user-circle fa-3x mr-1"></i>
