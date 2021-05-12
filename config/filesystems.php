@@ -57,10 +57,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
+            'key' => 'AKIATOBQILL5DTMYFZ2I',
+            'secret' => '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',
+            'region' => 'ap-northeast-1',
+            'bucket' => 'pokerlookingbackprofileimage',
             'url' => env('AWS_URL'),
         ],
 
