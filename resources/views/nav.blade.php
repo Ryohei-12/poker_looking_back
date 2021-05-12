@@ -39,7 +39,7 @@
          aria-haspopup="true" aria-expanded="false">
         <?php $user = Auth::user(); ?>
         @if ($user->icon_images)
-  				<img class="round-img-nav mr-1" src="{{ asset('storage/user_images/' . $user->icon_images) }}"/>
+  				<img class="round-img-nav mr-1" src="{{ Storage::disk('s3')->url(Auth::user()->icon_images) }}"/>
         @else
           <i class="fas fa-user-circle fa-2x"></i>
     		@endif

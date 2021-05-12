@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Storage;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -53,6 +54,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'icon_images' => ['file', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'name' => ['required', 'string', 'min:3', 'max:16', 'unique:users'], //3〜16文字のユニークユーザー
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'], //メールアドレスの形でユニーク
             'password' => ['required', 'string','regex:/^[a-zA-Z0-9]+$/', 'min:8', 'confirmed'], //英数字8文字以上
@@ -69,7 +71,18 @@ class RegisterController extends Controller
     //ユーザー新規登録処理
     protected function create(array $data)
     {
+        if (request()->file('icon_images') !=null) {
+            $icon = request()->file('icon_images');
+            // s3のicon_imagesファイルに追加
+            $path = Storage::disk('s3')->put('icon_images',$icon, 'public');
+        }
+        else{
+            $icon_images = null;
+        }
+
         return User::create([
+            // パスを、ユーザのicon_imagesカラムに保存
+            'icon_images' => $path,
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Storage;
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
@@ -29,9 +30,12 @@ class UserController extends Controller
     {
         $user = User::find($request->id);
         if ($request->icon_images !=null) {
-            $request->file('icon_images')->storeAs('public/user_images', $user->id . '.jpg');
-            $user->icon_images = $user->id . '.jpg';
+            $icon = request()->file('icon_images');
+            // s3のicon_imagesファイルに追加
+            $path = Storage::disk('s3')->put('icon_images',$icon, 'public');
         }
+        // パスを、ユーザのicon_imagesカラムに保存
+        $user->icon_images = $path;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->save();

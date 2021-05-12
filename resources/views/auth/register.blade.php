@@ -21,16 +21,20 @@
             </a>
           </h1>
           <div class="card mt-3 card-style">
-            <div class="card-body text-center">
+            <div class="card-body">
               <h2 class="h3 card-title text-light text-center mt-2">ユーザー登録</h2>
 
               @include('error_card_list')
 
               <!--新規登録フォーム-->
               <div class="card-text text-light">
-                <form method="POST" action="{{ route('register') }}">
+                <form enctype="multipart/form-data" method="POST" action="{{ route('register') }}">
                   @csrf
-                  <div class="md-form text-text-light">
+                    <label for="icon_images" class="mt-3 text-light text-left">
+                      <p class="mb-2">アイコン</p>
+                      <input class="form-control-file" type="file" name="icon_images" id="icon_images" value="{{ old('icon_images') }}" accept="image/jpeg,image/gif,image/png" />
+                    </label>
+                  <div class="md-form text-light">
                     <label for="name" class="text-light">ユーザー名</label>
                     <input class="form-control text-light" type="text" id="name" name="name" value="{{ old('name') }}">
                     <small>3〜16文字</small>
@@ -54,7 +58,7 @@
                   </button>
                 </form>
 
-                <div class="mt-0">
+                <div class="mt-0 text-center">
                   <a href="{{ route('login') }}" class="card-text text-light">ログインはこちら</a>
                 </div>
                 
