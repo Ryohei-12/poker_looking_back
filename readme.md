@@ -12,6 +12,7 @@
 - CSS
 - XAMPP
 - MySQL
+- AWS
 
 ## アプリケーションURL
 https://poker-looking-back.herokuapp.com/
@@ -40,6 +41,7 @@ https://poker-looking-back.herokuapp.com/
 |	Column	|	Type	|	Options	|
 |-----------|-----------|-----------|
 |	id		|	integer	|	null: false, unique: true	|
+|	icon_images	|	string	|	|
 |	name	|	string	|	null: false, unique: true	|
 |	email	|	string	|	null: false,unique: true	|
 |	password	|	string	|null: false	|
