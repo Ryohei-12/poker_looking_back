@@ -13,4 +13,10 @@
 /*ナビバーCSS*/
 .nav-color {
 	background: linear-gradient(135deg, #000000, #009966);
-  }
+}
+
+.round-img-nav{
+	border-radius:50%;
+	width: 30px;
+	height: 30px;
+}

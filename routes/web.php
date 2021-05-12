@@ -26,8 +26,10 @@ Route::get('/main', function () {
     return view('main');
 });
 
+//ユーザ編集ページ表示・ユーザ更新
+Route::resource('/users', 'UserController')->except(['create', 'index', 'show','destroy'])->middleware('auth');
 //ユーザーページ表示
-Route::get('users/{name}', 'UserController@show')->name('users.show');
+Route::get('users/{user}', 'UserController@show')->name('users.show');
 
 //投稿一覧
 Route::get('/articles/index', "ArticleController@index")->name('articles.index');

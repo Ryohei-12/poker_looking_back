@@ -6,7 +6,7 @@
     Poker looking back
   </a>
 
-  <ul class="navbar-nav ml-auto">
+  <ul class="navbar-nav ml-auto align-items-center">
 
   <!--未ログインユーザーの来訪なら表示-->
 	@guest
@@ -35,14 +35,23 @@
 	@auth
     <!-- Dropdown -->
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+      <a class="nav-link dropdown-toggle d-flex align-items-center" id="navbarDropdownMenuLink" data-toggle="dropdown"
          aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-user-circle fa-1x"></i>
+        <?php $user = Auth::user(); ?>
+        @if ($user->icon_images)
+  				<img class="round-img-nav mr-1" src="{{ asset('storage/user_images/' . $user->icon_images) }}"/>
+        @else
+          <i class="fas fa-user-circle fa-2x"></i>
+    		@endif
         <?php $user = Auth::user(); ?>{{ $user->name }}
       </a>
       <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-        <button class="dropdown-item" type="button" onclick="location.href='{{ route("users.show", ["name" => Auth::user()->name]) }}'">
+        <button class="dropdown-item" type="button" onclick="location.href='{{ route("users.show", ["user" => Auth::user()->id]) }}'">
           マイページ
+        </button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item" type="button" onclick="location.href='{{ route("users.edit", ['user' => Auth::user()->id]) }}'">
+          プロフィール編集
         </button>
         <div class="dropdown-divider"></div>
         <button form="logout-button" class="dropdown-item" type="submit">

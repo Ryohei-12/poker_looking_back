@@ -14,13 +14,30 @@
 <div class="jumbotron jumbotron-extend">
 	<div class="container">
 		<div class="container pt-3 text-light">
+			<!--プロフィール編集した際にコントローラーで指定したメッセージを表示する-->
+			@if (session('poststatus'))
+				<div class="alert alert-success mt-4 mb-4">
+					{{ session('poststatus') }}
+				</div>
+			@endif
 			<div class="card card-style">
 				<div class="card-body">
-					<div class="d-flex flex-row">
+					<div class="d-flex flex-row align-items-center">
+					@if ($user->icon_images)
+        				<p>
+    						<img class="round-img" src="{{ asset('storage/user_images/' . $user->icon_images) }}"/>
+        				</p>
+        			@else
 						<i class="fas fa-user-circle fa-3x mr-1"></i>
-						<h2 class="h5 card-title m-0">
+    				@endif
+						<h2 class="h5 card-title m-0 ml-1">
 							{{ $user->name }}の投稿
 						</h2>
+						@if ($user->id == Auth::user()->id)
+							<a class="d-flex align-items-center ml-auto" href="{{ route("users.edit", ['user' => $user->id]) }}">
+								<i class="fa fa-cog fa-2x text-light"></i> 
+							</a>
+						@endif
 					</div>
 				</div>
 			</div>

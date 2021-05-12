@@ -6,7 +6,7 @@
 ![top](https://user-images.githubusercontent.com/81517427/117424013-4edeac00-af5c-11eb-90b3-c9cb7697bbea.png)
 
 ## 使用技術
-- PHP 7.4.16
+- PHP 7.4.19
 - Laravel 6.20.24
 - HTML
 - CSS
