@@ -34,8 +34,9 @@ class UserController extends Controller
         }
         $user->name = $request->name;
         $user->email = $request->email;
-        //dd($request->icon_image);
         $user->save();
+
+        $validated = $request->validated();
 
         return redirect()->route('users.show', ['user' => $user])
             ->with('poststatus', 'プロフィールを編集しました');
