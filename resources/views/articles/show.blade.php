@@ -34,12 +34,19 @@
 
                   <!--コメント一覧-->  
                   @foreach($article->comment as $comment)
-                    <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-light">
+                  <a href="{{ route("users.show", [$article->user_id]) }}" class="text-light">
+                    <?php $user = $article->user; ?>
+                    @if ($user->icon_images)
+                      <p>
+                        <img class="comment-img mr-1" src="{{ Storage::disk('s3')->url($user->icon_images) }}"/>
+                      </p>
+                    @else
                       <i class="fas fa-user-circle fa-2x mr-1"></i>
-                    </a>
+                      @endif
+                  </a>
                   <div>
                     <div class="font-weight-bold">
-                      <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-light">
+                      <a href="{{ route('users.show', [$article->user_id]) }}" class="text-light">
                         {{ $comment->user->name }}
                       </a>
                     </div>

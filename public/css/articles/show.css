@@ -23,6 +23,12 @@
 	margin: 10px
 }
 
+.comment-img{
+	border-radius:50%;
+	width: 30px;
+	height: 30px;
+}
+
 /*カード内CSS*/
 .card-style{
 	width: 100%;

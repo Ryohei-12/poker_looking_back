@@ -6,7 +6,7 @@
 <div class="card mt-3 mx-auto card-style">
   <div class="card-body d-flex flex-row">
       <!--ユーザー詳細画面に遷移-->
-      <a href="{{ route("users.show", ["user" => $article->user->id]) }}" class="text-light">
+      <a href="{{ route("users.show", [$article->user_id]) }}" class="text-light">
         <?php $user = $article->user; ?>
         @if ($user->icon_images)
         	<p>
@@ -20,7 +20,7 @@
     <div>
       <div class="font-weight-bold text-light">
         <!--ユーザー詳細画面に遷移-->
-        <a href="{{ route("users.show", ["user" => $article->user->id]) }}" class="text-light">
+        <a href="{{ route("users.show", [$article->user_id]) }}" class="text-light">
         {{ $article->user->name }}
         </a>
       </div>
@@ -37,7 +37,7 @@
           </a>
           <!--投稿更新ページに接続-->
           <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="{{ route("articles.edit", ['article' => $article->id]) }}">
+            <a class="dropdown-item" href="{{ route("articles.edit", [$article->id]) }}">
               <i class="fas fa-pen mr-1"></i>投稿を編集する
             </a>
             <!--投稿削除機能に接続-->
@@ -83,7 +83,7 @@
   <!--投稿内容-->
   <div class="card-body pt-0">
     <h3 class="h4 card-title">
-      <a class="text-light" href="{{ route('articles.show', ['article' => $article->id]) }}">
+      <a class="text-light" href="{{ route('articles.show', [$article->id]) }}">
         {{ $article->title }}
       </a>
     </h3>
@@ -109,7 +109,7 @@
 
     <!--投稿詳細ページに遷移-->
     <div class="mt-4">
-      <a class="detail-color" href="{{ route('articles.show', ['article' => $article->id]) }}">
+      <a class="detail-color" href="{{ route('articles.show', [$article->id]) }}">
         コメントを見る
       </a>
     </div>
