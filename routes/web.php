@@ -52,3 +52,6 @@ Route::group(['prefix'=>'range' , 'as'=>'range.'], function(){
     Route::get('/openrange/sb', 'HandrangeController@opensb');
     Route::get('/commingsoon', 'HandrangeController@commingsoon');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
