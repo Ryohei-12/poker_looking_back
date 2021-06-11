@@ -13,7 +13,6 @@
 			<div class="container text-center text-light">
 
 				<h1>Hand Range</h1>
-
 				シチュエーションを選んでください<br/>
 				<button 
 				class="btn btn-dark btn-style"
@@ -23,13 +22,13 @@
 
 				<button
 				class="btn btn-dark  btn-style"
-				onclick="location.href='/range/commingsoon'">
+				onclick="location.href='/range/facing_a_raise'">
 				Facing A Raise
 				</button><br />
 
 				<button
 				class="btn btn-dark  btn-style"
-				onclick="location.href='/range/commingsoon'">
+				onclick="location.href='/range/facing_a_3bet'">
 				Facing A 3Bet
 				</button><br />
 

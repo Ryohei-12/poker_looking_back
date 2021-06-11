@@ -50,6 +50,8 @@ Route::group(['prefix'=>'range' , 'as'=>'range.'], function(){
     Route::get('/openrange/co', 'HandrangeController@openco');
     Route::get('/openrange/btn', 'HandrangeController@openbtn');
     Route::get('/openrange/sb', 'HandrangeController@opensb');
+    Route::get('/facing_a_raise', 'HandrangeController@facingaraise');
+    Route::get('/facing_a_3bet', 'HandrangeController@facinga3bet');
     Route::get('/commingsoon', 'HandrangeController@commingsoon');
 });
 Auth::routes();
