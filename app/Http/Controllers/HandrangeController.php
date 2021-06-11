@@ -35,6 +35,14 @@ class HandrangeController extends Controller
         return view('handranges.openrange.sb');
     }
 
+    public function facingaraise(){
+        return view('handranges.facing_a_raise');
+    }
+
+    public function facinga3bet(){
+        return view('handranges.facing_a_3bet');
+    }
+
     public function commingsoon(){
         return view('handranges.commingsoon');
     }

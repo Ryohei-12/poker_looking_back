@@ -12,9 +12,9 @@
 	<body>
 		<div class="jumbotron jumbotron-extend jumbotron-height">
 			<div class="container text-center text-light">
-
+			
 				<div id="app">
-  					<openrange></openrange>
+  					<></>
 				</div>
 
 				<button class="btn btn-dark back-btn" onclick="location.href='/range'">

@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('openrange', require('./components/Openrange.vue').default);
+Vue.component('facing-a-raise', require('./components/FacingARaise.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -30,4 +31,5 @@ Vue.component('openrange', require('./components/Openrange.vue').default);
 
 const app = new Vue({
     el: '#app',
+    delimiters: ["<%","%>"],
 });

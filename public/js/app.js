@@ -1932,13 +1932,270 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FacingARaise.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FacingARaise.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "PreflopRaise",
+  data: function data() {
+    return {
+      situation: 'Open Raise',
+      my_position: '',
+      opponent_position: '',
+      situations: [{
+        id: 0,
+        name: 'Open Raise',
+        myPositions: [{
+          tId: 0,
+          use: 'UTG',
+          opponentPositions: [{
+            label: '',
+            life: 0
+          }]
+        }, {
+          tId: 1,
+          use: 'HJ',
+          opponentPositions: [{
+            label: '',
+            life: 1
+          }]
+        }, {
+          tId: 1,
+          use: 'CO',
+          opponentPositions: [{
+            label: '',
+            life: 2
+          }]
+        }, {
+          tId: 1,
+          use: 'BTN',
+          opponentPositions: [{
+            label: '',
+            life: 3
+          }]
+        }, {
+          tId: 1,
+          use: 'SB',
+          opponentPositions: [{
+            label: '',
+            life: 4
+          }]
+        }]
+      }, {
+        id: 1,
+        name: 'Facing A Raise',
+        myPositions: [{
+          tId: 0,
+          use: 'HJ',
+          opponentPositions: [{
+            label: 'UTG',
+            life: 5
+          }]
+        }, {
+          tId: 1,
+          use: 'CO',
+          opponentPositions: [{
+            label: 'UTG',
+            life: 6
+          }, {
+            label: 'HJ',
+            life: 7
+          }]
+        }, {
+          tId: 2,
+          use: 'BTN',
+          opponentPositions: [{
+            label: 'UTG',
+            life: 8
+          }, {
+            label: 'HJ',
+            life: 9
+          }, {
+            label: 'CO',
+            life: 10
+          }]
+        }, {
+          tId: 3,
+          use: 'SB',
+          opponentPositions: [{
+            label: 'UTG',
+            life: 11
+          }, {
+            label: 'HJ',
+            life: 12
+          }, {
+            label: 'CO',
+            life: 13
+          }, {
+            label: 'BTN',
+            life: 14
+          }]
+        }, {
+          tId: 4,
+          use: 'BB',
+          opponentPositions: [{
+            label: 'UTG',
+            life: 15
+          }, {
+            label: 'HJ',
+            life: 16
+          }, {
+            label: 'CO',
+            life: 17
+          }, {
+            label: 'BTN',
+            life: 18
+          }, {
+            label: 'SB',
+            life: 19
+          }]
+        }]
+      }, {
+        id: 2,
+        name: 'Facing A 3bet',
+        myPositions: [{
+          tId: 0,
+          use: 'UTG',
+          opponentPositions: [{
+            label: 'HJ',
+            life: 20
+          }, {
+            label: 'CO',
+            life: 21
+          }, {
+            label: 'BTN',
+            life: 22
+          }, {
+            label: 'SB',
+            life: 23
+          }, {
+            label: 'BB',
+            life: 24
+          }]
+        }, {
+          tId: 1,
+          use: 'HJ',
+          opponentPositions: [{
+            label: 'CO',
+            life: 25
+          }, {
+            label: 'BTN',
+            life: 26
+          }, {
+            label: 'SB',
+            life: 27
+          }, {
+            label: 'BB',
+            life: 28
+          }]
+        }, {
+          tId: 2,
+          use: 'CO',
+          opponentPositions: [{
+            label: 'BTN',
+            life: 29
+          }, {
+            label: 'SB',
+            life: 30
+          }, {
+            label: 'BB',
+            life: 31
+          }]
+        }, {
+          tId: 3,
+          use: 'BTN',
+          opponentPositions: [{
+            label: 'SB',
+            life: 32
+          }, {
+            label: 'BB',
+            life: 33
+          }]
+        }, {
+          tId: 4,
+          use: 'SB',
+          opponentPositions: [{
+            label: 'BB',
+            life: 34
+          }]
+        }]
+      }]
+    };
+  },
+  computed: {
+    getMyPositions: function getMyPositions() {
+      // 選択中の情報を取得
+      var situationName = this.situation; // 1つ目のselect
+      // situations から選択中のnameを探す
+
+      var situationResult = this.situations.find(function (v) {
+        return v.name === situationName;
+      }); // 2つ目のselectの初期値をセットする
+
+      this.my_position = this.situations[situationResult.id].myPositions[0].use; // 2つ目のselectのoptionをセットする
+
+      return this.situations[situationResult.id].myPositions;
+    },
+    getOpponentPositions: function getOpponentPositions() {
+      // 選択中の情報を取得
+      var situationName = this.situation; // 1つ目のselect
+
+      var myPositionName = this.my_position; // 2つ目のselect
+      // situations から選択中のuseを探す
+
+      var situationResult = this.situations.find(function (v) {
+        return v.name === situationName;
+      });
+      var myPositionResult = this.situations[situationResult.id].myPositions.find(function (v) {
+        return v.use === myPositionName;
+      }); // ３つ目のselectの初期値をセットする
+
+      console.log(this.situations[situationResult.id].myPositions[myPositionResult.tId].opponentPositions[0].label);
+      this.opponent_position = this.situations[situationResult.id].myPositions[myPositionResult.tId].opponentPositions[0].label; // 3つ目のselectのoptionをセットする
+
+      return this.situations[situationResult.id].myPositions[myPositionResult.tId].opponentPositions;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Openrange.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Openrange.vue?vue&type=script&lang=js& ***!
   \********************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -1952,6 +2209,138 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "OpenRange",
+  data: function data() {
+    return {
+      utg: false,
+      hj: false,
+      co: false,
+      btn: false,
+      sb: false
+    };
+  },
+  methods: {
+    ChangeUtg: function ChangeUtg() {
+      this.utg = true;
+      this.hj = false;
+      this.co = false;
+      this.btn = false;
+      this.sb = false;
+    },
+    ChangeHj: function ChangeHj() {
+      this.utg = false;
+      this.hj = true;
+      this.co = false;
+      this.btn = false;
+      this.sb = false;
+    },
+    ChangeCo: function ChangeCo() {
+      this.utg = false;
+      this.hj = false;
+      this.co = true;
+      this.btn = false;
+      this.sb = false;
+    },
+    ChangeBtn: function ChangeBtn() {
+      this.utg = false;
+      this.hj = false;
+      this.co = false;
+      this.btn = true;
+      this.sb = false;
+    },
+    ChangeSb: function ChangeSb() {
+      this.utg = false;
+      this.hj = false;
+      this.co = false;
+      this.btn = false;
+      this.sb = true;
+    }
+  }
+});
 
 /***/ }),
 
@@ -37648,6 +38037,155 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FacingARaise.vue?vue&type=template&id=172ee5f0&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FacingARaise.vue?vue&type=template&id=172ee5f0& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", [_vm._v("PREFLOP RANGE")]),
+    _vm._v(" "),
+    _c("div", [
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.situation,
+              expression: "situation"
+            }
+          ],
+          attrs: { name: "situation" },
+          on: {
+            change: function($event) {
+              var $$selectedVal = Array.prototype.filter
+                .call($event.target.options, function(o) {
+                  return o.selected
+                })
+                .map(function(o) {
+                  var val = "_value" in o ? o._value : o.value
+                  return val
+                })
+              _vm.situation = $event.target.multiple
+                ? $$selectedVal
+                : $$selectedVal[0]
+            }
+          }
+        },
+        _vm._l(_vm.situations, function(situation, index) {
+          return _c(
+            "option",
+            { key: situation.index, domProps: { value: situation.name } },
+            [_vm._v(_vm._s(situation.name))]
+          )
+        }),
+        0
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", [
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.my_position,
+              expression: "my_position"
+            }
+          ],
+          attrs: { name: "my_position" },
+          on: {
+            change: function($event) {
+              var $$selectedVal = Array.prototype.filter
+                .call($event.target.options, function(o) {
+                  return o.selected
+                })
+                .map(function(o) {
+                  var val = "_value" in o ? o._value : o.value
+                  return val
+                })
+              _vm.my_position = $event.target.multiple
+                ? $$selectedVal
+                : $$selectedVal[0]
+            }
+          }
+        },
+        _vm._l(_vm.getMyPositions, function(myPosition, index) {
+          return _c(
+            "option",
+            { key: myPosition.index, domProps: { value: myPosition.use } },
+            [_vm._v(_vm._s(myPosition.use))]
+          )
+        }),
+        0
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", [
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.opponent_position,
+              expression: "opponent_position"
+            }
+          ],
+          attrs: { name: "opponent_position" },
+          on: {
+            change: function($event) {
+              var $$selectedVal = Array.prototype.filter
+                .call($event.target.options, function(o) {
+                  return o.selected
+                })
+                .map(function(o) {
+                  var val = "_value" in o ? o._value : o.value
+                  return val
+                })
+              _vm.opponent_position = $event.target.multiple
+                ? $$selectedVal
+                : $$selectedVal[0]
+            }
+          }
+        },
+        _vm._l(_vm.getOpponentPositions, function(opponentPosition, index) {
+          return _c(
+            "option",
+            {
+              key: opponentPosition.index,
+              domProps: { value: opponentPosition.label }
+            },
+            [_vm._v(_vm._s(opponentPosition.label))]
+          )
+        }),
+        0
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Openrange.vue?vue&type=template&id=7f3f49d8&":
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Openrange.vue?vue&type=template&id=7f3f49d8& ***!
@@ -37663,20 +38201,417 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _vm.utg
+      ? _c("div", { key: "utg", staticClass: "row" }, [
+          _c("h1", { staticClass: "text-center col-md-12" }, [
+            _vm._v("Open Raise Range From UTG")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center col-4 col-md-3" }, [
+            _c("p", [_vm._v("ポジション")]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeUtg }
+              },
+              [_vm._v("UTG")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeHj }
+              },
+              [_vm._v("HJ")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeCo }
+              },
+              [_vm._v("CO")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeBtn }
+              },
+              [_vm._v("BTN")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeSb }
+              },
+              [_vm._v("SB")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-8 col-md-9 pull-left" }, [
+            _c("img", {
+              staticClass: "img-fluid mt-4",
+              attrs: { src: "/img/open_UTG.png", alt: "" }
+            })
+          ])
+        ])
+      : _vm.hj
+      ? _c("div", { key: "hj", staticClass: "row" }, [
+          _c("h1", { staticClass: "text-center col-md-12" }, [
+            _vm._v("Open Raise Range From HJ")
+          ]),
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center col-4 col-md-3" }, [
+            _c("p", { staticClass: "text-center" }, [_vm._v("ポジション")]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeUtg }
+              },
+              [_vm._v("UTG")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeHj }
+              },
+              [_vm._v("HJ")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeCo }
+              },
+              [_vm._v("CO")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeBtn }
+              },
+              [_vm._v("BTN")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeSb }
+              },
+              [_vm._v("SB")]
+            ),
+            _c("br")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-8 col-md-9 pull-left" }, [
+            _c("img", {
+              staticClass: "img-fluid mt-4",
+              attrs: { src: "/img/open_HJ.png", alt: "" }
+            })
+          ])
+        ])
+      : _vm.co
+      ? _c("div", { key: "co", staticClass: "row" }, [
+          _c("h1", { staticClass: "text-center col-md-12" }, [
+            _vm._v("Open Raise Range From CO")
+          ]),
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center col-4 col-md-3" }, [
+            _c("p", { staticClass: "text-center" }, [_vm._v("ポジション")]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeUtg }
+              },
+              [_vm._v("UTG")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeHj }
+              },
+              [_vm._v("HJ")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeCo }
+              },
+              [_vm._v("CO")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeBtn }
+              },
+              [_vm._v("BTN")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeSb }
+              },
+              [_vm._v("SB")]
+            ),
+            _c("br")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-8 col-md-9 pull-left" }, [
+            _c("img", {
+              staticClass: "img-fluid mt-4",
+              attrs: { src: "/img/open_CO.png", alt: "" }
+            })
+          ])
+        ])
+      : _vm.btn
+      ? _c("div", { key: "btn", staticClass: "row" }, [
+          _c("h1", { staticClass: "text-center col-md-12" }, [
+            _vm._v("Open Raise Range From BTN")
+          ]),
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center col-4 col-md-3" }, [
+            _c("p", { staticClass: "text-center" }, [_vm._v("ポジション")]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeUtg }
+              },
+              [_vm._v("UTG")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeHj }
+              },
+              [_vm._v("HJ")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeCo }
+              },
+              [_vm._v("CO")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeBtn }
+              },
+              [_vm._v("BTN")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeSb }
+              },
+              [_vm._v("SB")]
+            ),
+            _c("br")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-8 col-md-9 pull-left" }, [
+            _c("img", {
+              staticClass: "img-fluid mt-4",
+              attrs: { src: "/img/open_BTN.png", alt: "" }
+            })
+          ])
+        ])
+      : _vm.sb
+      ? _c("div", { key: "sb", staticClass: "row" }, [
+          _c("h1", { staticClass: "text-center col-md-12" }, [
+            _vm._v("Open Raise Range From SB")
+          ]),
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center col-4 col-md-3" }, [
+            _c("p", { staticClass: "text-center" }, [_vm._v("ポジション")]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeUtg }
+              },
+              [_vm._v("UTG")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeHj }
+              },
+              [_vm._v("HJ")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeCo }
+              },
+              [_vm._v("CO")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeBtn }
+              },
+              [_vm._v("BTN")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeSb }
+              },
+              [_vm._v("SB")]
+            ),
+            _c("br")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-8 col-md-9 pull-left" }, [
+            _c("img", {
+              staticClass: "img-fluid mt-4",
+              attrs: { src: "/img/open_SB.png", alt: "" }
+            })
+          ])
+        ])
+      : _c("div", { staticClass: "row" }, [
+          _c("h1", { staticClass: "text-center col-md-12" }, [
+            _vm._v("Open Range")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-4 col-md-3 text-center" }, [
+            _c("p", [_vm._v("ポジション")]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeUtg }
+              },
+              [_vm._v("UTG")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeHj }
+              },
+              [_vm._v("HJ")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeCo }
+              },
+              [_vm._v("CO")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeBtn }
+              },
+              [_vm._v("BTN")]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-dark btn-style",
+                on: { click: _vm.ChangeSb }
+              },
+              [_vm._v("SB")]
+            ),
+            _c("br")
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c(
-        "button",
-        { staticClass: "btn m-0 p-1 shadow-none", attrs: { type: "button" } },
-        [_c("i", { staticClass: "fas fa-heart mr-1" })]
-      ),
-      _vm._v("\n  10\n")
+    return _c("h4", { staticClass: "col-8 col-md-9 mt-5" }, [
+      _vm._v("\r\n      ポジションを"),
+      _c("br"),
+      _vm._v("選択してください\r\n    ")
     ])
   }
 ]
@@ -49875,6 +50810,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('openrange', __webpack_require__(/*! ./components/Openrange.vue */ "./resources/js/components/Openrange.vue")["default"]);
+Vue.component('facing-a-raise', __webpack_require__(/*! ./components/FacingARaise.vue */ "./resources/js/components/FacingARaise.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -49882,7 +50818,8 @@ Vue.component('openrange', __webpack_require__(/*! ./components/Openrange.vue */
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  delimiters: ["<%", "%>"]
 });
 
 /***/ }),
@@ -50015,6 +50952,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/FacingARaise.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/FacingARaise.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FacingARaise_vue_vue_type_template_id_172ee5f0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FacingARaise.vue?vue&type=template&id=172ee5f0& */ "./resources/js/components/FacingARaise.vue?vue&type=template&id=172ee5f0&");
+/* harmony import */ var _FacingARaise_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FacingARaise.vue?vue&type=script&lang=js& */ "./resources/js/components/FacingARaise.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FacingARaise_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FacingARaise_vue_vue_type_template_id_172ee5f0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FacingARaise_vue_vue_type_template_id_172ee5f0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/FacingARaise.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/FacingARaise.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/FacingARaise.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacingARaise_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./FacingARaise.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FacingARaise.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacingARaise_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/FacingARaise.vue?vue&type=template&id=172ee5f0&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/FacingARaise.vue?vue&type=template&id=172ee5f0& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacingARaise_vue_vue_type_template_id_172ee5f0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./FacingARaise.vue?vue&type=template&id=172ee5f0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FacingARaise.vue?vue&type=template&id=172ee5f0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacingARaise_vue_vue_type_template_id_172ee5f0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacingARaise_vue_vue_type_template_id_172ee5f0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Openrange.vue":
 /*!***********************************************!*\
   !*** ./resources/js/components/Openrange.vue ***!
@@ -50063,9 +51069,7 @@ component.options.__file = "resources/js/components/Openrange.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Openrange_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Openrange.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Openrange.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Openrange_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Openrange_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Openrange_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Openrange_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Openrange_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Openrange_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
